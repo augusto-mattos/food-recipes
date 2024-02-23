@@ -15,8 +15,8 @@ function NavBar() {
         <NavLink to="/#">About</NavLink>
       </nav>
       <div className="nav-buttons">
-        <button>Login</button>
-        <button>Sign up</button>
+        <button className="login-btn">Login</button>
+        <button className="signup-btn">Sign up</button>
       </div>
     </header>
   );

@@ -1,0 +1,14 @@
+@mixin flex-gap-1rem {
+  display: flex;
+  gap: 1rem;
+}
+
+@mixin btn-defaut {
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  min-width: 100px;
+  cursor: pointer;
+}
