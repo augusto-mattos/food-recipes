@@ -1,13 +1,42 @@
+@use "../mixins";
+@use "../variables";
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: transparent;
   nav {
-    display: flex;
-    gap: 1rem;
+    @include mixins.flex-gap-1rem;
+    a {
+      text-decoration: none;
+      color: variables.$black;
+      font-weight: 500;
+      &:hover {
+        color: variables.$terracota-1;
+      }
+    }
   }
   .nav-buttons {
-    display: flex;
-    gap: 1rem;
+    @include mixins.flex-gap-1rem;
+    .login-btn {
+      @include mixins.btn-defaut;
+      background-color: variables.$gray-1;
+      transition: all 300ms ease-in-out;
+      &:hover {
+        background-color: variables.$terracota-3;
+        color: variables.$white;
+      }
+    }
+    .signup-btn {
+      @include mixins.btn-defaut;
+      background-color: variables.$terracota-1;
+      color: variables.$white;
+      transition: all 300ms ease-in-out;
+      &:hover {
+        background-color: variables.$gray-2;
+        color: variables.$black;
+      }
+    }
   }
 }

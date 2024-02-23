@@ -2,14 +2,54 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: transparent;
 }
 header nav {
   display: flex;
   gap: 1rem;
 }
+header nav a {
+  text-decoration: none;
+  color: #1e1e1e;
+  font-weight: 500;
+}
+header nav a:hover {
+  color: #b55d51;
+}
 header .nav-buttons {
   display: flex;
   gap: 1rem;
+}
+header .nav-buttons .login-btn {
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  min-width: 100px;
+  cursor: pointer;
+  background-color: #ebebeb;
+  transition: all 300ms ease-in-out;
+}
+header .nav-buttons .login-btn:hover {
+  background-color: #793e37;
+  color: #ffffff;
+}
+header .nav-buttons .signup-btn {
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  min-width: 100px;
+  cursor: pointer;
+  background-color: #b55d51;
+  color: #ffffff;
+  transition: all 300ms ease-in-out;
+}
+header .nav-buttons .signup-btn:hover {
+  background-color: #a5a5a5;
+  color: #1e1e1e;
 }
 
 #root {
@@ -17,6 +57,7 @@ header .nav-buttons {
   margin: 0 auto;
   padding: 1rem 0;
   font-family: "Roboto", sans-serif;
+  color: #1e1e1e;
 }
 
 /*# sourceMappingURL=styles.css.map */
