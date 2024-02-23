@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+  .nav-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+}

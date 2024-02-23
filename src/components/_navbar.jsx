@@ -4,12 +4,10 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
   return (
     <header>
-      <div className="navbar">
         <img
           src={logo}
           alt="Food Recipes"
         />
-      </div>
       <nav>
         <NavLink to="/#">Home</NavLink>
         <NavLink to="/#">Recipe</NavLink>
