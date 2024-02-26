@@ -8,12 +8,12 @@ import './assets/styles.css';
 function App() {
   return (
     <Router>
-      <Layout> {/* Correção: Utilizar o Layout como um wrapper */}
+      <Layout> 
         <Routes>
           <Route index element={<Home />} />
           <Route path='/recipe/:id' element={<Recipe />} />
         </Routes>
-      </Layout> {/* Correção: Fechar o Layout após as rotas */}
+      </Layout> 
     </Router>
   );
 }

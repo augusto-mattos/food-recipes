@@ -1,3 +1,13 @@
+h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 36px;
+  margin: 0;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -50,6 +60,19 @@ header .nav-buttons .signup-btn {
 header .nav-buttons .signup-btn:hover {
   background-color: #a5a5a5;
   color: #1e1e1e;
+}
+
+.hero {
+  display: flex;
+  gap: 100px;
+}
+.hero .hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.hero .hero-content span {
+  color: #974e44;
 }
 
 #root {

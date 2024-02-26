@@ -1,0 +1,15 @@
+@use "../mixins";
+@use "../variables";
+
+.hero {
+  display: flex;
+  gap: 100px;
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    span {
+      color: variables.$terracota-2;
+    }
+  }
+}

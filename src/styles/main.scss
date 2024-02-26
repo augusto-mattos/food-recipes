@@ -1,6 +1,7 @@
 @use "./variables";
 
 @use "./components/navbar";
+@use "./components/hero";
 
 #root {
   max-width: 1240px;
