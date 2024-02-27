@@ -1,3 +1,5 @@
+@use "../styles/variables";
+
 @mixin flex-gap-1rem {
   display: flex;
   gap: 1rem;
@@ -9,6 +11,16 @@
   border: none;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
-  min-width: 100px;
+  min-width: 6.25rem;
   cursor: pointer;
+}
+
+@mixin btn-terracota {
+  background-color: variables.$terracota-1;
+  color: variables.$white;
+  transition: all 300ms ease-in-out;
+  &:hover {
+    background-color: variables.$gray-2;
+    color: variables.$black;
+  }
 }

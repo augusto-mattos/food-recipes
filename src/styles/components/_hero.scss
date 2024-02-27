@@ -3,13 +3,33 @@
 
 .hero {
   display: flex;
-  gap: 100px;
+  margin: 6.25rem 0;
+  justify-content: space-between;
   .hero-content {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 50%;
     span {
       color: variables.$terracota-2;
     }
+    p {
+      color: variables.$gray-3;
+      font-size: 1rem;
+    }
+    a {
+      text-decoration: none;
+      color: variables.$terracota-2;
+    }
+    button {
+      @include mixins.btn-defaut();
+      @include mixins.btn-terracota();
+      max-width: fit-content;
+    }
+  }
+  img {
+    width: auto;
+    height: 400px;
   }
 }
