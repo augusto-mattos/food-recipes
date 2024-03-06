@@ -24,3 +24,14 @@
     color: variables.$black;
   }
 }
+
+@mixin view-more-btn {
+  background-color: unset;
+  border: unset;
+  color: variables.$terracota-1;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}

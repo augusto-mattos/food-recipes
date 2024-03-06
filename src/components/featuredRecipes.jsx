@@ -31,19 +31,23 @@ function FeaturedRecipes() {
   };
 
   return (
-    <div>
-      <h1>Receitas em destaque</h1>
-      <div>
+    <section className="featured-recipes-section">
+      <h2>Receitas em destaque</h2>
+      <div className="btn-container">
+      <button className="view-more-btn">View more</button>
+      </div>
+      <div className="top-recipes">
         {shuffleRecipes(recipes)
           .slice(0, 3)
           .map((recipe, index) => (
             <CardRecipe
               key={index}
+              id={recipe.recipe.uri}
               {...recipe.recipe}
             />
           ))}
       </div>
-    </div>
+    </section>
   );
 }
 

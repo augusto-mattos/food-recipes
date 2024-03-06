@@ -1,0 +1,19 @@
+@use "../mixins";
+
+.featured-recipes-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: auto;
+  .btn-container {
+    display: flex;
+    justify-content: flex-end;
+    .view-more-btn {
+      @include mixins.view-more-btn();
+    }
+  }
+  .top-recipes {
+    display: flex;
+    gap: 2rem;
+  }
+}
