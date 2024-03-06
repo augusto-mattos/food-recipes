@@ -34,7 +34,7 @@ function FeaturedRecipes() {
     <section className="featured-recipes-section">
       <h2>Receitas em destaque</h2>
       <div className="btn-container">
-      <button className="view-more-btn">View more</button>
+        <button className="view-more-btn">View more</button>
       </div>
       <div className="top-recipes">
         {shuffleRecipes(recipes)

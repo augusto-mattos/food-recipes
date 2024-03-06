@@ -15,7 +15,7 @@ h3 {
 
 h4 {
   font-size: 1rem;
-  margin: 0.4rem;
+  margin: 0;
 }
 
 header {
@@ -200,23 +200,38 @@ footer .animidia {
 .card-recipe {
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: #1e1e1e;
   border: 0.1rem solid #ebebeb;
   border-radius: 0.5rem;
   width: 100%;
+  cursor: pointer;
 }
 .card-recipe img {
   border-radius: 0.5rem 0.5rem 0 0;
   height: 12.5rem;
   object-fit: cover;
 }
+.card-recipe .recipe-title {
+  margin: 0.75rem 0.75rem 0 0.75rem;
+}
 .card-recipe .recipe-info {
   display: flex;
   justify-content: space-between;
-  margin: 0.4rem;
+  margin: 0.75rem;
 }
 .card-recipe .recipe-info span {
   font-size: 0.85rem;
-  font-weight: 400;
+  font-weight: 500;
+  color: #4c4c4c;
+}
+.card-recipe .recipe-info .calories {
+  display: flex;
+  gap: 0.2rem;
+  color: #b55d51;
+  padding: 0.2rem;
+  border: 0.12rem solid #b55d51;
+  border-radius: 0.35rem;
 }
 
 #root {
