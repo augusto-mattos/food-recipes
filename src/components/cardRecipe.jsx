@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFire } from "@fortawesome/free-solid-svg-icons";
 
 function CardRecipe(props) {
   return (
@@ -13,7 +15,10 @@ function CardRecipe(props) {
       <h4>{props.label}</h4>
       <div className="recipe-info">
         <span>{`Category: ${props.mealType}`}</span>
-        <span>{props.calories.toFixed(0)}</span>
+        <div className="calories">
+          <FontAwesomeIcon icon={faFire} />
+          <span>{props.calories.toFixed(0)}</span>
+        </div>
       </div>
     </div>
   );
