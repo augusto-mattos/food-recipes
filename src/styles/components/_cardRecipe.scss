@@ -3,21 +3,36 @@
 .card-recipe {
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: variables.$black;
   border: 0.1rem solid variables.$gray-1;
   border-radius: 0.5rem;
   width: 100%;
+  cursor: pointer;
   img {
     border-radius: 0.5rem 0.5rem 0 0;
     height: 12.5rem;
     object-fit: cover;
   }
+  .recipe-title {
+    margin: .75rem .75rem 0 .75rem;
+  }
   .recipe-info {
     display: flex;
     justify-content: space-between;
-    margin: 0.4rem;
+    margin: .75rem;
     span {
       font-size: 0.85rem;
-      font-weight: 400;
+      font-weight: 500;
+      color: variables.$gray-3;
+    }
+    .calories {
+      display: flex;
+      gap: 0.2rem;
+      color: variables.$terracota-1;
+      padding: 0.2rem;
+      border: 0.12rem solid variables.$terracota-1;
+      border-radius: 0.35rem;
     }
   }
 }
