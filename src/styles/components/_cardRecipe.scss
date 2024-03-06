@@ -1,0 +1,23 @@
+@use "../variables";
+
+.card-recipe {
+  display: flex;
+  flex-direction: column;
+  border: 0.1rem solid variables.$gray-1;
+  border-radius: 0.5rem;
+  width: 100%;
+  img {
+    border-radius: 0.5rem 0.5rem 0 0;
+    height: 12.5rem;
+    object-fit: cover;
+  }
+  .recipe-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.4rem;
+    span {
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+  }
+}

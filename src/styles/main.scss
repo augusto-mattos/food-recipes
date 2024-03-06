@@ -3,6 +3,8 @@
 @use "./components/navbar";
 @use "./components/hero";
 @use "./components/footer";
+@use "./components/featuredRecipes";
+@use "./components/cardRecipe";
 
 #root {
   max-width: 1240px;
@@ -10,4 +12,11 @@
   padding: 1rem 0;
   font-family: "Roboto", sans-serif;
   color: variables.$black;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  margin: 4.25rem 0;
 }
