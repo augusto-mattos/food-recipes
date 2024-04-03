@@ -10,6 +10,7 @@ footer {
   width: 100%;
   padding: 20px 0;
   background-color: variables.$gray-1;
+  font-size: 0.9rem;
   .footer-content {
     display: flex;
     justify-content: space-between;
@@ -29,11 +30,10 @@ footer {
       }
     }
     .footer-links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include mixins.flex-col-center();
       width: 20%;
-      justify-content: space-around;
+      justify-content: start;
+      gap: 0.5rem;
       a {
         text-decoration: none;
         color: variables.$gray-3;
@@ -41,9 +41,28 @@ footer {
     }
     .newsletter-col {
       width: 30%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include mixins.flex-col-center();
+      form {
+        @include mixins.flex-col-center();
+        gap: 1rem;
+        width: 100%;
+        label {
+          @include mixins.flex-col-center();
+          gap: 0.5rem;
+          margin-top: 0.5rem;
+          input {
+            padding: 0.25rem;
+            width: 100%;
+            border-radius: 0.25rem;
+            border: none;
+          }
+        }
+        button {
+          @include mixins.btn-defaut();
+          @include mixins.btn-terracota();
+          width: 50%;
+        }
+      }
     }
   }
   hr {
@@ -54,5 +73,12 @@ footer {
     margin: auto;
     width: 1240px;
     justify-content: space-between;
+    .social-media {
+      display: flex;
+      gap: 0.5rem;
+      a {
+        color: variables.$black;
+      }
+    }
   }
 }
