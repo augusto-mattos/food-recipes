@@ -1,7 +1,13 @@
 import logo from "../../assets/logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate("/login");
+  }
+
   return (
     <header>
         <img
@@ -15,7 +21,7 @@ function NavBar() {
         <NavLink to="/#">About</NavLink>
       </nav>
       <div className="nav-buttons">
-        <button className="login-btn">Login</button>
+        <button className="login-btn" onClick={handleClick}>Login</button>
         <button className="signup-btn">Sign up</button>
       </div>
     </header>

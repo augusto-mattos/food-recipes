@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import fetchRandomRecipes from "../data/randomRecipes";
-import CardRecipe from "./cardRecipe";
+import fetchRandomRecipes from "../data/_randomRecipes";
+import CardRecipe from "./_cardRecipe";
 
 function FeaturedRecipes() {
   const [recipes, setRecipes] = useState([]);
@@ -32,7 +32,7 @@ function FeaturedRecipes() {
 
   return (
     <section className="featured-recipes-section">
-      <h2>Receitas em destaque</h2>
+      <h3>Receitas em destaque</h3>
       <div className="btn-container">
         <button className="view-more-btn">View more</button>
       </div>
