@@ -14,13 +14,31 @@
     height: 12.5rem;
     object-fit: cover;
   }
-  .recipe-title {
-    margin: .75rem .75rem 0 .75rem;
+  .title-and-like {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.75rem 0.75rem 0 0.75rem;
+    .recipe-title {
+      max-width: 30ch;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .recipe-like {
+      color: variables.$black;
+      transition: all 300ms ease-in-out;
+      &:hover {
+        color: variables.$terracota-2;
+      }
+      .solid-heart {
+        color: variables.$terracota-2;
+      }
+    }
   }
   .recipe-info {
     display: flex;
     justify-content: space-between;
-    margin: .75rem;
+    margin: 0.75rem;
     span {
       font-size: 0.85rem;
       font-weight: 500;
