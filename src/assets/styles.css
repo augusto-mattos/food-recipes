@@ -258,8 +258,26 @@ footer .animidia .social-media a {
   height: 12.5rem;
   object-fit: cover;
 }
-.card-recipe .recipe-title {
+.card-recipe .title-and-like {
+  display: flex;
+  justify-content: space-between;
   margin: 0.75rem 0.75rem 0 0.75rem;
+}
+.card-recipe .title-and-like .recipe-title {
+  max-width: 30ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card-recipe .title-and-like .recipe-like {
+  color: #1e1e1e;
+  transition: all 300ms ease-in-out;
+}
+.card-recipe .title-and-like .recipe-like:hover {
+  color: #974e44;
+}
+.card-recipe .title-and-like .recipe-like .solid-heart {
+  color: #974e44;
 }
 .card-recipe .recipe-info {
   display: flex;
