@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchDataRecipes } from "../../data/_dataRecipe";
+import NutritionalFacts from "../../components/_nutrionalFacts";
 
 function Recipe() {
   const currentURL = window.location.href;
@@ -11,7 +12,18 @@ function Recipe() {
 
   const storedRecipe =
     JSON.parse(sessionStorage.getItem("recipeData"))?.recipe || {};
-  const { label, calories, cuisineType, dietLabel, dishType, ingredientLines, ingredients, mealType, image } = storedRecipe;
+  const {
+    label,
+    calories,
+    cuisineType,
+    dietLabel,
+    dishType,
+    ingredientLines,
+    ingredients,
+    mealType,
+    image,
+  } = storedRecipe;
+  
   const yieldValue = storedRecipe["yield"];
 
   useEffect(() => {
@@ -21,7 +33,7 @@ function Recipe() {
         setRecipeData(data);
         setLoading(false);
       } catch (error) {
-        // Trate o erro adequadamente aqui
+        // INCLUIR MSG DE ERRO
         console.error("Erro ao buscar dados da receita:", error);
         setLoading(false);
       }
@@ -41,24 +53,29 @@ function Recipe() {
   return (
     <>
       <h1>{label}</h1>
+      <div className="recipe-header">
+        <img
+          src={image}
+          alt="imagem da receita"
+        />
+        <NutritionalFacts />
+      </div>
       <div>{calories}</div>
       <div>{cuisineType}</div>
       <div>{dietLabel}</div>
       <div>{dishType}</div>
       <div>{mealType}</div>
       <div>{yieldValue}</div>
-      <div>{ingredientLines.map((ingredient, index) => (
-        <li key={index}>{ingredient}</li>
-      ))}</div>
+      <div>
+        {ingredientLines.map((ingredient, index) => (
+          <li key={index}>{ingredient}</li>
+        ))}
+      </div>
       <div>
         {ingredients.map((ingredient, index) => (
           <li key={index}>{ingredient.text}</li>
         ))}
       </div>
-      <img
-        src={image}
-        alt=""
-      />
     </>
   );
 }

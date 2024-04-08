@@ -18,6 +18,18 @@ h4 {
   margin: 0;
 }
 
+.recipe-header {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  gap: 2rem;
+}
+.recipe-header img {
+  width: 100%;
+  height: 34rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -296,6 +308,41 @@ footer .animidia .social-media a {
   padding: 0.2rem;
   border: 0.12rem solid #b55d51;
   border-radius: 0.35rem;
+}
+
+.nutritional-facts {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  height: 32rem;
+  overflow-y: scroll;
+  background-color: #ebebeb;
+}
+.nutritional-facts h4 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.nutritional-facts .nutritional-items {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+.nutritional-facts .nutritional-items div {
+  display: flex;
+  justify-content: space-between;
+}
+.nutritional-facts .nutritional-items div p {
+  margin: unset;
+}
+.nutritional-facts .nutritional-items button {
+  align-self: center;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  text-decoration: underline;
 }
 
 #root {

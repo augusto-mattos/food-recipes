@@ -1,0 +1,36 @@
+@use "../variables";
+
+.nutritional-facts {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  height: 32rem;
+  overflow-y: scroll;
+  background-color: variables.$gray-1;
+  h4 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .nutritional-items {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    div {
+      display: flex;
+      justify-content: space-between;
+      p {
+        margin: unset;
+      }
+    }
+    button {
+      align-self: center;
+      border: none;
+      cursor: pointer;
+      margin-top: 1rem;
+      text-decoration: underline;
+    }
+  }
+}
