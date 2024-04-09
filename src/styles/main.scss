@@ -1,13 +1,12 @@
 @use "./variables";
 
-@use "./pages/recipe.scss";
-
 @use "./components/navbar";
 @use "./components/hero";
 @use "./components/footer";
 @use "./components/featuredRecipes";
 @use "./components/cardRecipe";
 @use "./components/nutritionalFacts";
+@use "./components/recipeHeader";
 
 #root {
   max-width: 1240px;

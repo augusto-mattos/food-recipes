@@ -18,18 +18,6 @@ h4 {
   margin: 0;
 }
 
-.recipe-header {
-  display: grid;
-  grid-template-columns: 75% 25%;
-  gap: 2rem;
-}
-.recipe-header img {
-  width: 100%;
-  height: 34rem;
-  object-fit: cover;
-  border-radius: 0.5rem;
-}
-
 header {
   display: flex;
   justify-content: space-between;
@@ -344,15 +332,60 @@ footer .animidia .social-media a {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 0.0125rem;
-  background-color: #ccc;
+  height: 0.01rem;
+  background-color: #a5a5a5;
 }
 .nutritional-facts .nutritional-items button {
   align-self: center;
   border: none;
-  cursor: pointer;
-  margin-top: 1rem;
   text-decoration: underline;
+  background-color: unset;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.recipe-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.recipe-header .recipe-specs {
+  display: flex;
+  justify-content: space-between;
+}
+.recipe-header .recipe-specs .calories,
+.recipe-header .recipe-specs .cuisine-type,
+.recipe-header .recipe-specs .dish-type,
+.recipe-header .recipe-specs .meal-type,
+.recipe-header .recipe-specs .yield-value,
+.recipe-header .recipe-specs .diet-labels {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+}
+.recipe-header .recipe-specs .calories .spec-icon,
+.recipe-header .recipe-specs .cuisine-type .spec-icon,
+.recipe-header .recipe-specs .dish-type .spec-icon,
+.recipe-header .recipe-specs .meal-type .spec-icon,
+.recipe-header .recipe-specs .yield-value .spec-icon,
+.recipe-header .recipe-specs .diet-labels .spec-icon {
+  color: #793e37;
+  height: 1.25rem;
+}
+.recipe-header .recipe-specs span {
+  text-transform: capitalize;
+}
+.recipe-header .recipe-cover {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  gap: 2rem;
+}
+.recipe-header .recipe-cover img {
+  width: 100%;
+  height: 34rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
 }
 
 #root {

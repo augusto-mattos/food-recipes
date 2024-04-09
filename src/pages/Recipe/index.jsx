@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchDataRecipes } from "../../data/_dataRecipe";
-import NutritionalFacts from "../../components/_nutrionalFacts";
+import RecipeHeader from "../../components/_recipeHeader";
 
 function Recipe() {
   const currentURL = window.location.href;
@@ -12,19 +12,7 @@ function Recipe() {
 
   const storedRecipe =
     JSON.parse(sessionStorage.getItem("recipeData"))?.recipe || {};
-  const {
-    label,
-    calories,
-    cuisineType,
-    dietLabel,
-    dishType,
-    ingredientLines,
-    ingredients,
-    mealType,
-    image,
-  } = storedRecipe;
-  
-  const yieldValue = storedRecipe["yield"];
+  const { ingredientLines, ingredients } = storedRecipe;
 
   useEffect(() => {
     async function fetchRecipeData() {
@@ -52,20 +40,7 @@ function Recipe() {
 
   return (
     <>
-      <h1>{label}</h1>
-      <div className="recipe-header">
-        <img
-          src={image}
-          alt="imagem da receita"
-        />
-        <NutritionalFacts />
-      </div>
-      <div>{calories}</div>
-      <div>{cuisineType}</div>
-      <div>{dietLabel}</div>
-      <div>{dishType}</div>
-      <div>{mealType}</div>
-      <div>{yieldValue}</div>
+      <RecipeHeader />
       <div>
         {ingredientLines.map((ingredient, index) => (
           <li key={index}>{ingredient}</li>

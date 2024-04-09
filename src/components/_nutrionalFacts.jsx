@@ -15,11 +15,11 @@ function NutritionalFacts() {
         {limitedNutrients.map((nutrientLabel, index) => (
             <div key={index}>
               <p>
-                {totalNutrients[nutrientLabel].label}:
+              <strong>{totalNutrients[nutrientLabel].label}:</strong>
               </p>
               <p>
-                <strong>{parseFloat(totalNutrients[nutrientLabel].quantity).toFixed(0)}{" "}
-                {totalNutrients[nutrientLabel].unit} </strong>
+                {parseFloat(totalNutrients[nutrientLabel].quantity).toFixed(0)}{" "}
+                {totalNutrients[nutrientLabel].unit}
               </p>
             </div>
           ))}
