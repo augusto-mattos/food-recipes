@@ -351,7 +351,7 @@ footer .animidia .social-media a {
 }
 .recipe-header .recipe-specs {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .recipe-header .recipe-specs .calories,
 .recipe-header .recipe-specs .cuisine-type,
