@@ -360,7 +360,7 @@ footer .animidia .social-media a {
 }
 .recipe-header .recipe-specs {
   display: flex;
-  gap: 3rem;
+  gap: 2.2rem;
   justify-content: flex-start;
 }
 .recipe-header .recipe-specs .calories,

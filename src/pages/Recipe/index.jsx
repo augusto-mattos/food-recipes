@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchDataRecipes } from "../../data/_dataRecipe";
 import RecipeHeader from "../../components/_recipeHeader";
+import IngredientsList from "../../components/_ingredientsList";
 
 function Recipe() {
   const currentURL = window.location.href;
@@ -9,10 +10,6 @@ function Recipe() {
 
   const [loading, setLoading] = useState(true);
   const [recipeData, setRecipeData] = useState(null);
-
-  const storedRecipe =
-    JSON.parse(sessionStorage.getItem("recipeData"))?.recipe || {};
-  const { ingredientLines, ingredients } = storedRecipe;
 
   useEffect(() => {
     async function fetchRecipeData() {
@@ -41,16 +38,7 @@ function Recipe() {
   return (
     <>
       <RecipeHeader />
-      <div>
-        {ingredientLines.map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
-        ))}
-      </div>
-      <div>
-        {ingredients.map((ingredient, index) => (
-          <li key={index}>{ingredient.text}</li>
-        ))}
-      </div>
+      <IngredientsList />
     </>
   );
 }
