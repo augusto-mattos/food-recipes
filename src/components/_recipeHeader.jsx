@@ -7,6 +7,7 @@ import {
   faKitchenSet,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
+import FavoriteRecipeButton from "./_favoriteRecipeBtn";
 import NutritionalFacts from "./_nutrionalFacts";
 
 function RecipeHeader() {
@@ -30,7 +31,10 @@ function RecipeHeader() {
 
   return (
     <section className="recipe-header">
-      <h1>{label}</h1>
+      <div className="title">
+        <h1>{label}</h1>
+        <FavoriteRecipeButton />
+      </div>
       <div className="recipe-specs">
         <div className="calories">
           <FontAwesomeIcon

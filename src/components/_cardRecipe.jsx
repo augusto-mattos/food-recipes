@@ -1,20 +1,10 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFire } from "@fortawesome/free-solid-svg-icons";
-import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
-import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
+import FavoriteRecipeButton from "./_favoriteRecipeBtn";
 
 function CardRecipe(props) {
-  const [isLiked, setIsLiked] = useState(false);
-
-  const toggleLike = (e) => {
-    e.preventDefault();
-    setIsLiked(!isLiked);
-    //CONTINUAR LOGICA PARA SALVAR A INFORMACAO NA BASE E POPULAR A LISTA DE FAVORITOS
-  };
-
   return (
     <Link
       to={`/recipe/${props.uri.split("_")[1]}`}
@@ -27,15 +17,7 @@ function CardRecipe(props) {
       />
       <div className="title-and-like">
         <h4 className="recipe-title">{props.label}</h4>
-        <div
-          className="recipe-like"
-          onClick={toggleLike}
-        >
-          <FontAwesomeIcon
-            icon={isLiked ? solidHeart : regularHeart}
-            className={isLiked ? "solid-heart" : ""}
-          />
-        </div>
+        <FavoriteRecipeButton />
       </div>
       <div className="recipe-info">
         <span>{`Category: ${props.mealType[0]}`}</span>
