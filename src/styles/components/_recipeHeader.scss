@@ -3,10 +3,19 @@
 .recipe-header {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.25rem;
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .recipe-like {
+      font-size: 1.5rem;
+    }
+  }
   .recipe-specs {
     display: flex;
-    justify-content: space-around;
+    gap: 3rem;
+    justify-content: flex-start;
     .calories,
     .cuisine-type,
     .dish-type,

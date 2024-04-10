@@ -269,16 +269,6 @@ footer .animidia .social-media a {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.card-recipe .title-and-like .recipe-like {
-  color: #1e1e1e;
-  transition: all 300ms ease-in-out;
-}
-.card-recipe .title-and-like .recipe-like:hover {
-  color: #974e44;
-}
-.card-recipe .title-and-like .recipe-like .solid-heart {
-  color: #974e44;
-}
 .card-recipe .recipe-info {
   display: flex;
   justify-content: space-between;
@@ -296,6 +286,17 @@ footer .animidia .social-media a {
   padding: 0.2rem;
   border: 0.12rem solid #b55d51;
   border-radius: 0.35rem;
+}
+
+.recipe-like {
+  color: #1e1e1e;
+  transition: all 300ms ease-in-out;
+}
+.recipe-like:hover {
+  color: #974e44;
+}
+.recipe-like .solid-heart {
+  color: #974e44;
 }
 
 .nutritional-facts {
@@ -347,11 +348,20 @@ footer .animidia .social-media a {
 .recipe-header {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.25rem;
+}
+.recipe-header .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.recipe-header .title .recipe-like {
+  font-size: 1.5rem;
 }
 .recipe-header .recipe-specs {
   display: flex;
-  justify-content: space-around;
+  gap: 3rem;
+  justify-content: flex-start;
 }
 .recipe-header .recipe-specs .calories,
 .recipe-header .recipe-specs .cuisine-type,
