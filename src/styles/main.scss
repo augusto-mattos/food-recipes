@@ -8,6 +8,7 @@
 @use "./components/favoriteRecipeBtn";
 @use "./components/nutritionalFacts";
 @use "./components/recipeHeader";
+@use "./components/ingredientsList";
 
 #root {
   max-width: 1240px;
