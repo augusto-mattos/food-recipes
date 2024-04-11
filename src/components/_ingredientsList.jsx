@@ -1,4 +1,6 @@
 import { useState } from "react";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 function IngredientsList() {
   const storedRecipe =
@@ -25,10 +27,27 @@ function IngredientsList() {
     setItems(updatedItems);
   };
 
+  const handleGeneratePDF = () => {
+    const doc = new jsPDF();
+    const ingredientsList = document.querySelector("#ingredientsList");
+
+    html2canvas(ingredientsList, { width: ingredientsList.offsetWidth, height: ingredientsList.offsetHeight }).then(canvas => {
+      const imgData = canvas.toDataURL("image/png");
+      
+      const imgWidth = 210;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      const margin = 10; 
+
+      doc.addImage(imgData, "PNG", margin, margin, imgWidth, imgHeight); 
+      doc.save("lista_ingredientes.pdf");
+    });
+
+  };
+
   return (
     <section>
+      <div id="ingredientsList" className="ingredients-list">
       <h3>Ingredients:</h3>
-      <div className="ingredients-list">
         {items.map((item) => (
           <div key={item.id}>
             <label className={item.isChecked ? "checked" : ""}>
@@ -43,7 +62,7 @@ function IngredientsList() {
         ))}
       </div>
       <div className="recipe-actions">
-        <button className="ingrendients-list-btn">
+        <button className="ingrendients-list-btn" onClick={handleGeneratePDF}>
           Imprimir lista de ingredientes
         </button>
         <button className="market-list-btn">
