@@ -2,7 +2,10 @@ import { useState } from "react";
 
 function IngredientsList() {
   const storedRecipe = JSON.parse(sessionStorage.getItem("recipeData"))?.recipe || {};
-  const { ingredientLines } = storedRecipe;
+  let { ingredientLines } = storedRecipe;
+
+  //usei para retirar o * do inicio da string quando vem assim da api
+  ingredientLines = ingredientLines.map(ingredient => ingredient.replace(/^\*/, ''));
 
   const [items, setItems] = useState(
     ingredientLines.map((ingredient, index) => ({
@@ -20,21 +23,22 @@ function IngredientsList() {
   };
 
   return (
-    <>
-      <h2>Ingredients:</h2>
-      <div>
+    <section>
+      <h3>Ingredients:</h3>
+      <div className="ingredients-list">
         {items.map((item) => (
           <div key={item.id}>
+            <label className={item.isChecked ? "checked" : ""}>
             <input
               type="checkbox"
               checked={item.isChecked}
               onChange={() => toggleCheck(item.id)}
             />
-            <span>{item.text}</span>
+              {item.text}</label>
           </div>
         ))}
       </div>
-    </>
+    </section>
   );
 }
 
