@@ -41,7 +41,19 @@ function IngredientsList() {
       doc.addImage(imgData, "PNG", margin, margin, imgWidth, imgHeight); 
       doc.save("lista_ingredientes.pdf");
     });
+  };
 
+  const handleGenerateShoppingList = () => {
+    const doc = new jsPDF();
+
+    const shoppingListItems = items.filter(item => !item.isChecked);
+    const shoppingListContent = shoppingListItems.map(item => item.text).join("\n");
+
+    const title = "Lista de Compras";
+  const contentWithTitle = `${title}\n\n${shoppingListContent}`;
+
+    doc.text(contentWithTitle, 10, 10); // Posição inicial da lista de compras
+    doc.save("lista_de_compras.pdf");
   };
 
   return (
@@ -65,7 +77,7 @@ function IngredientsList() {
         <button className="ingrendients-list-btn" onClick={handleGeneratePDF}>
           Imprimir lista de ingredientes
         </button>
-        <button className="market-list-btn">
+        <button className="market-list-btn" onClick={handleGenerateShoppingList} >
           Gerar lista de compras
         </button>
       </div>
