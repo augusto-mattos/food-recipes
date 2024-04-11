@@ -413,6 +413,7 @@ section .ingredients-list {
 section .ingredients-list label {
   display: flex;
   gap: 0.5rem;
+  width: fit-content;
 }
 section .ingredients-list label.checked {
   color: #a5a5a5;

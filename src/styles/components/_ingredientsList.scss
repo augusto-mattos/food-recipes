@@ -13,6 +13,7 @@ section {
     label {
       display: flex;
       gap: 0.5rem;
+      width: fit-content;
       &.checked {
         color: variables.$gray-2;
         text-decoration: line-through;
