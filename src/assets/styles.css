@@ -399,27 +399,27 @@ footer .animidia .social-media a {
   border-radius: 0.5rem;
 }
 
-section {
+#ingredientsList {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-section .ingredients-list {
+#ingredientsList .ingredients-list {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   margin: 1rem 0;
 }
-section .ingredients-list label {
+#ingredientsList .ingredients-list label {
   display: flex;
   gap: 0.5rem;
   width: fit-content;
 }
-section .ingredients-list label.checked {
+#ingredientsList .ingredients-list label.checked {
   color: #a5a5a5;
   text-decoration: line-through;
 }
-section .ingredients-list label input {
+#ingredientsList .ingredients-list label input {
   all: unset;
   border: 0.1rem solid #b55d51;
   border-radius: 0.2rem;
@@ -427,14 +427,15 @@ section .ingredients-list label input {
   height: 0.75rem;
   cursor: pointer;
 }
-section .ingredients-list label input:checked {
+#ingredientsList .ingredients-list label input:checked {
   background-color: #b55d51;
 }
-section .recipe-actions {
+
+.recipe-actions {
   display: flex;
   gap: 1rem;
 }
-section .recipe-actions .ingrendients-list-btn {
+.recipe-actions .ingrendients-list-btn {
   font-size: 0.9rem;
   font-weight: 600;
   border: none;
@@ -446,11 +447,11 @@ section .recipe-actions .ingrendients-list-btn {
   color: #ffffff;
   transition: all 300ms ease-in-out;
 }
-section .recipe-actions .ingrendients-list-btn:hover {
+.recipe-actions .ingrendients-list-btn:hover {
   background-color: #a5a5a5;
   color: #1e1e1e;
 }
-section .recipe-actions .market-list-btn {
+.recipe-actions .market-list-btn {
   font-size: 0.9rem;
   font-weight: 600;
   border: none;
@@ -461,7 +462,7 @@ section .recipe-actions .market-list-btn {
   background-color: #ebebeb;
   transition: all 300ms ease-in-out;
 }
-section .recipe-actions .market-list-btn:hover {
+.recipe-actions .market-list-btn:hover {
   background-color: #793e37;
   color: #ffffff;
 }
@@ -477,7 +478,7 @@ section .recipe-actions .market-list-btn:hover {
 main {
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
+  gap: 2.5rem;
   margin: 4.25rem 0;
 }
 
