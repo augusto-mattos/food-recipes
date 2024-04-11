@@ -1,11 +1,14 @@
 import { useState } from "react";
 
 function IngredientsList() {
-  const storedRecipe = JSON.parse(sessionStorage.getItem("recipeData"))?.recipe || {};
+  const storedRecipe =
+    JSON.parse(sessionStorage.getItem("recipeData"))?.recipe || {};
   let { ingredientLines } = storedRecipe;
 
   //usei para retirar o * do inicio da string quando vem assim da api
-  ingredientLines = ingredientLines.map(ingredient => ingredient.replace(/^\*/, ''));
+  ingredientLines = ingredientLines.map((ingredient) =>
+    ingredient.replace(/^\*/, "")
+  );
 
   const [items, setItems] = useState(
     ingredientLines.map((ingredient, index) => ({
@@ -29,12 +32,13 @@ function IngredientsList() {
         {items.map((item) => (
           <div key={item.id}>
             <label className={item.isChecked ? "checked" : ""}>
-            <input
-              type="checkbox"
-              checked={item.isChecked}
-              onChange={() => toggleCheck(item.id)}
-            />
-              {item.text}</label>
+              <input
+                type="checkbox"
+                checked={item.isChecked}
+                onChange={() => toggleCheck(item.id)}
+              />
+              {item.text}
+            </label>
           </div>
         ))}
       </div>
