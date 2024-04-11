@@ -1,7 +1,7 @@
 @use "../variables";
 @use "../mixins";
 
-section {
+#ingredientsList {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -31,16 +31,16 @@ section {
       }
     }
   }
-  .recipe-actions {
-    display: flex;
-    gap: 1rem;
-    .ingrendients-list-btn {
-      @include mixins.btn-defaut();
-      @include mixins.btn-terracota();
-    }
-    .market-list-btn {
-      @include mixins.btn-defaut();
-      @include mixins.btn-gray();
-    }
+}
+.recipe-actions {
+  display: flex;
+  gap: 1rem;
+  .ingrendients-list-btn {
+    @include mixins.btn-defaut();
+    @include mixins.btn-terracota();
+  }
+  .market-list-btn {
+    @include mixins.btn-defaut();
+    @include mixins.btn-gray();
   }
 }
