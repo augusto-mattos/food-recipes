@@ -31,6 +31,15 @@
   }
 }
 
+@mixin btn-gray {
+  background-color: variables.$gray-1;
+  transition: all 300ms ease-in-out;
+  &:hover {
+    background-color: variables.$terracota-3;
+    color: variables.$white;
+  }
+}
+
 @mixin view-more-btn {
   background-color: unset;
   border: unset;

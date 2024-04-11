@@ -42,6 +42,14 @@ function IngredientsList() {
           </div>
         ))}
       </div>
+      <div className="recipe-actions">
+        <button className="ingrendients-list-btn">
+          Imprimir lista de ingredientes
+        </button>
+        <button className="market-list-btn">
+          Gerar lista de compras
+        </button>
+      </div>
     </section>
   );
 }

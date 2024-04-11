@@ -1,33 +1,45 @@
 @use "../variables";
+@use "../mixins";
 
-.ingredients-list {
+section {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin: 1rem 0;
-  label {
+  gap: 0.5rem;
+  .ingredients-list {
     display: flex;
-    gap: 0.5rem;
-    &.checked {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1rem 0;
+    label {
+      display: flex;
+      gap: 0.5rem;
+      &.checked {
         color: variables.$gray-2;
-        text-decoration:line-through;
+        text-decoration: line-through;
+      }
+      input {
+        all: unset;
+        border: 0.1rem solid variables.$terracota-1;
+        border-radius: 0.2rem;
+        width: 0.75rem;
+        height: 0.75rem;
+        cursor: pointer;
+        &:checked {
+          background-color: variables.$terracota-1;
+        }
+      }
     }
-    input {
-      all: unset;
-      border: 0.1rem solid variables.$terracota-1;
-      border-radius: 0.2rem;
-      width: 0.75rem;
-      height: 0.75rem;
-      cursor: pointer;
-      &:checked {
-        background-color: variables.$terracota-1;
-      }
-      &:checked + label {
-        color: aqua;
-      }
-      label {
-        color: pink;
-      }
+  }
+  .recipe-actions {
+    display: flex;
+    gap: 1rem;
+    .ingrendients-list-btn {
+      @include mixins.btn-defaut();
+      @include mixins.btn-terracota();
+    }
+    .market-list-btn {
+      @include mixins.btn-defaut();
+      @include mixins.btn-gray();
     }
   }
 }
