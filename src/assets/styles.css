@@ -164,43 +164,6 @@ footer .footer-content .newsletter-col {
   flex-direction: column;
   align-items: center;
 }
-footer .footer-content .newsletter-col form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-}
-footer .footer-content .newsletter-col form label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-footer .footer-content .newsletter-col form label input {
-  padding: 0.25rem;
-  width: 100%;
-  border-radius: 0.25rem;
-  border: none;
-}
-footer .footer-content .newsletter-col form button {
-  font-size: 0.9rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
-  min-width: 6.25rem;
-  cursor: pointer;
-  background-color: #b55d51;
-  color: #ffffff;
-  transition: all 300ms ease-in-out;
-  width: 50%;
-}
-footer .footer-content .newsletter-col form button:hover {
-  background-color: #a5a5a5;
-  color: #1e1e1e;
-}
 footer hr {
   width: 1240px;
 }
@@ -216,6 +179,68 @@ footer .animidia .social-media {
 }
 footer .animidia .social-media a {
   color: #1e1e1e;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+form label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+form label input {
+  padding: 0.25rem;
+  width: 100%;
+  border-radius: 0.25rem;
+  border: none;
+}
+form button {
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  min-width: 6.25rem;
+  cursor: pointer;
+  background-color: #b55d51;
+  color: #ffffff;
+  transition: all 300ms ease-in-out;
+  width: 50%;
+}
+form button:hover {
+  background-color: #a5a5a5;
+  color: #1e1e1e;
+}
+
+.modal-confirmation {
+  position: fixed;
+  padding: 60px 50px;
+  top: 40%;
+  left: 38%;
+  background-color: #ebebeb;
+  border-radius: 10px;
+}
+.modal-confirmation p {
+  font-size: large;
+  font-weight: 500;
+  color: #974e44;
+}
+.modal-confirmation .close-btn {
+  position: absolute;
+  left: 90%;
+  top: 10%;
+  font-size: 1.25rem;
+  border: none;
+  color: #793e37;
+  background-color: unset;
+  cursor: pointer;
 }
 
 .featured-recipes-section {

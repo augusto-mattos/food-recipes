@@ -1,0 +1,47 @@
+@use "../mixins";
+@use "../variables";
+
+form {
+  @include mixins.flex-col-center();
+  gap: 1rem;
+  width: 100%;
+  label {
+    @include mixins.flex-col-center();
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    input {
+      padding: 0.25rem;
+      width: 100%;
+      border-radius: 0.25rem;
+      border: none;
+    }
+  }
+  button {
+    @include mixins.btn-defaut();
+    @include mixins.btn-terracota();
+    width: 50%;
+  }
+}
+.modal-confirmation {
+  position: fixed;
+  padding: 60px 50px;
+  top: 40%;
+  left: 38%;
+  background-color: variables.$gray-1;
+  border-radius: 10px;
+  p {
+    font-size: large;
+    font-weight: 500;
+    color: variables.$terracota-2;
+  };
+  .close-btn {
+    position: absolute;
+    left: 90%;
+    top: 10%;
+    font-size: 1.25rem;
+    border: none;
+    color: variables.$terracota-3;
+    background-color: unset;
+    cursor: pointer;
+  }
+}

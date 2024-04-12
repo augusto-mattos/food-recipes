@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import NewsletterForm from "../_newsletterForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -9,12 +10,6 @@ import {
 
 function Footer() {
   const today = new Date();
-
-  const submitForm = (e) => {
-    e.preventDefault();
-    console.log("Form sumitted");
-    //CRIAR MODAL DE CONFIRMACAO
-  };
 
   return (
     <>
@@ -44,40 +39,35 @@ function Footer() {
           </div>
           <div className="newsletter-col">
             <h3>Newsletter</h3>
-            <form>
-              <label>
-                Subscribe to our newsletter
-                <input
-                  type="email"
-                  placeholder="Enter your mail"
-                />
-              </label>
-              <button
-                type="submit"
-                onClick={submitForm}
-              >
-                Subscribe
-              </button>
-            </form>
+            <NewsletterForm />
           </div>
         </div>
         <hr />
         <div className="animidia">
           <div>©{today.getFullYear()} Recipe logo. All Rights Reserved</div>
           <div className="social-media">
-            <NavLink to="https://www.facebook.com/" target="_blank">
+            <NavLink
+              to="https://www.facebook.com/"
+              target="_blank"
+            >
               <FontAwesomeIcon
                 icon={faFacebook}
                 size="lg"
               />
             </NavLink>
-            <NavLink to="https://www.instagram.com/" target="_blank">
+            <NavLink
+              to="https://www.instagram.com/"
+              target="_blank"
+            >
               <FontAwesomeIcon
                 icon={faInstagram}
                 size="lg"
               />
             </NavLink>
-            <NavLink to="https://twitter.com/?lang=fr" target="_blank">
+            <NavLink
+              to="https://twitter.com/?lang=fr"
+              target="_blank"
+            >
               <FontAwesomeIcon
                 icon={faXTwitter}
                 size="lg"
