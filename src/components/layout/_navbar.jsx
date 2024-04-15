@@ -7,6 +7,9 @@ function NavBar() {
   const { signed, signOut } = useContext(AuthGoogleContext);
   const navigate = useNavigate();
 
+  const userData = JSON.parse(sessionStorage.getItem("@AuthFirebase:user"));
+  const signedUserName = userData ? userData.displayName : '';
+
   function handleClick() {
     if (signed) {
       signOut();
@@ -27,9 +30,14 @@ function NavBar() {
       </nav>
       <div className="nav-buttons">
         {signed ? (
+          <div className="signed-user">
+            <p>
+            {`Olá, ${signedUserName} !`}
+            </p>
           <button className="logout-btn" onClick={handleClick}>
             Logout
           </button>
+          </div>
         ) : (
           <button className="login-btn" onClick={handleClick}>
             Login
