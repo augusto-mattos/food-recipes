@@ -55,7 +55,7 @@ header .nav-buttons .login-btn:hover {
   background-color: #793e37;
   color: #ffffff;
 }
-header .nav-buttons .signup-btn {
+header .nav-buttons .logout-btn {
   font-size: 0.9rem;
   font-weight: 600;
   border: none;
@@ -67,7 +67,7 @@ header .nav-buttons .signup-btn {
   color: #ffffff;
   transition: all 300ms ease-in-out;
 }
-header .nav-buttons .signup-btn:hover {
+header .nav-buttons .logout-btn:hover {
   background-color: #a5a5a5;
   color: #1e1e1e;
 }
@@ -94,7 +94,26 @@ header .nav-buttons .signup-btn:hover {
   text-decoration: none;
   color: #974e44;
 }
-.hero .hero-content button {
+.hero .hero-content .connexion-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.hero .hero-content .connexion-buttons .login-btn {
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  min-width: 6.25rem;
+  cursor: pointer;
+  background-color: #ebebeb;
+  transition: all 300ms ease-in-out;
+}
+.hero .hero-content .connexion-buttons .login-btn:hover {
+  background-color: #793e37;
+  color: #ffffff;
+}
+.hero .hero-content .connexion-buttons .sign-up-btn {
   font-size: 0.9rem;
   font-weight: 600;
   border: none;
@@ -107,7 +126,7 @@ header .nav-buttons .signup-btn:hover {
   transition: all 300ms ease-in-out;
   max-width: fit-content;
 }
-.hero .hero-content button:hover {
+.hero .hero-content .connexion-buttons .sign-up-btn:hover {
   background-color: #a5a5a5;
   color: #1e1e1e;
 }
