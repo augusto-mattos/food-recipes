@@ -19,6 +19,15 @@ header {
   }
   .nav-buttons {
     @include mixins.flex-gap-1rem;
+    .signed-user {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      p {
+        margin: unset;
+        font-size: 1rem;
+      }
+    }
     .login-btn {
       @include mixins.btn-defaut();
       @include mixins.btn-gray();
