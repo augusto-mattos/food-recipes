@@ -3,11 +3,13 @@ import Layout from './components/layout/_layout';
 import Home from './pages/Home';
 import Recipe from './pages/Recipe';
 import Login from './pages/Login';
+import { AuthGoogleProvider } from "../src/contexts/authGoogle";
 
 import './assets/styles.css';
 
 function App() {
   return (
+    <AuthGoogleProvider>
     <Router>
       <Layout> 
         <Routes>
@@ -17,6 +19,7 @@ function App() {
         </Routes>
       </Layout> 
     </Router>
+    </AuthGoogleProvider>
   );
 }
 

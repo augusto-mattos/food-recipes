@@ -21,10 +21,18 @@
       text-decoration: none;
       color: variables.$terracota-2;
     }
-    button {
-      @include mixins.btn-defaut();
-      @include mixins.btn-terracota();
-      max-width: fit-content;
+    .connexion-buttons {
+      display: flex;
+      gap: 1rem;
+      .login-btn {
+        @include mixins.btn-defaut();
+        @include mixins.btn-gray();
+      }
+      .sign-up-btn {
+        @include mixins.btn-defaut();
+        @include mixins.btn-terracota();
+        max-width: fit-content;
+      }
     }
   }
   img {

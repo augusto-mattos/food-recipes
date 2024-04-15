@@ -1,19 +1,24 @@
+import { useContext } from "react";
+import { AuthGoogleContext } from "../../contexts/authGoogle";
 import logo from "../../assets/logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const { signed, signOut } = useContext(AuthGoogleContext);
   const navigate = useNavigate();
 
   function handleClick() {
-    navigate("/login");
+    if (signed) {
+      signOut();
+      navigate("/");
+    } else {
+      navigate("/login");
+    }
   }
 
   return (
     <header>
-        <img
-          src={logo}
-          alt="Food Recipes"
-        />
+      <img src={logo} alt="Food Recipes" />
       <nav>
         <NavLink to="/#">Home</NavLink>
         <NavLink to="/#">Recipe</NavLink>
@@ -21,8 +26,15 @@ function NavBar() {
         <NavLink to="/#">About</NavLink>
       </nav>
       <div className="nav-buttons">
-        <button className="login-btn" onClick={handleClick}>Login</button>
-        <button className="signup-btn">Sign up</button>
+        {signed ? (
+          <button className="logout-btn" onClick={handleClick}>
+            Logout
+          </button>
+        ) : (
+          <button className="login-btn" onClick={handleClick}>
+            Login
+          </button>
+        )}
       </div>
     </header>
   );

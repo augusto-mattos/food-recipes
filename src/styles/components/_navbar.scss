@@ -23,7 +23,7 @@ header {
       @include mixins.btn-defaut();
       @include mixins.btn-gray();
     }
-    .signup-btn {
+    .logout-btn {
       @include mixins.btn-defaut;
       @include mixins.btn-terracota();
     }
