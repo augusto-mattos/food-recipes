@@ -8,7 +8,7 @@ function NavBar() {
   const navigate = useNavigate();
 
   const userData = JSON.parse(sessionStorage.getItem("@AuthFirebase:user"));
-  const signedUserName = userData ? userData.displayName : '';
+  const signedUserName = userData ? (userData.displayName || userData.email) : "";
 
   function handleClick() {
     if (signed) {
