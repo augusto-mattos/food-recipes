@@ -1,5 +1,7 @@
 @use "./variables";
 
+@use "./pages/login.scss";
+
 @use "./components/navbar";
 @use "./components/hero";
 @use "./components/footer";
