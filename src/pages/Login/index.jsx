@@ -19,10 +19,14 @@ function Login() {
 
   const handleSignInWithEmail = async () => {
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       const user = userCredential.user;
-      const token = await user.getIdToken(); 
-      sessionStorage.setItem("@AuthFirebase:token", token); 
+      const token = await user.getIdToken();
+      sessionStorage.setItem("@AuthFirebase:token", token);
       sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
       console.log("Usuário logado:", user);
       navigate("/");
@@ -37,19 +41,29 @@ function Login() {
   }
 
   return (
-    <>
-            <h1>Login</h1>
-      <div>
-        <label>Email:</label>
-        <input type="email" value={email} onChange={handleEmailChange} />
+    <div className="login-container">
+      <h1>Login</h1>
+      <div className="input-group">
+        <label className="form-login-label">Email:</label>
+        <input
+          type="email"
+          value={email}
+          onChange={handleEmailChange}
+          className="email-input"
+        />
       </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" value={password} onChange={handlePasswordChange} />
+      <div className="input-group">
+        <label className="form-login-label">Password:</label>
+        <input
+          type="password"
+          value={password}
+          onChange={handlePasswordChange}
+          className="password-input"
+        />
       </div>
-      <button onClick={handleSignInWithEmail}>Login</button>
-      <button onClick={() => signInGoogle()}>Logar com o Google</button>
-    </>
+      <button onClick={handleSignInWithEmail} className="login-button">Login</button>
+      <button onClick={() => signInGoogle()} className="google-login-button"><span className="google-logo"></span>Logar com o Google</button>
+    </div>
   );
 }
 
