@@ -20,6 +20,12 @@ h4 {
 
 .login-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+.login-container .form-container {
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
@@ -29,23 +35,28 @@ h4 {
   padding: 3rem 1rem;
   background-color: #ebebeb;
 }
-.login-container .input-group {
+.login-container .form-container .form-title {
+  font-size: 2rem;
+}
+.login-container .form-container .input-group {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
 }
-.login-container .input-group .form-login-label {
+.login-container .form-container .input-group .form-login-label {
   font-size: large;
+  align-items: flex-start;
 }
-.login-container .input-group .email-input,
-.login-container .input-group .password-input {
+.login-container .form-container .input-group .email-input,
+.login-container .form-container .input-group .password-input {
   border: 0.1rem solid #1e1e1e;
   border-radius: 0.4rem;
   padding: 0.5rem;
   font-size: 0.9rem;
+  width: -webkit-fill-available;
 }
-.login-container .login-button {
+.login-container .form-container .login-button {
   width: 100%;
   padding: 0.5rem;
   font-size: 0.9rem;
@@ -57,11 +68,11 @@ h4 {
   color: #ffffff;
   transition: all 300ms ease-in-out;
 }
-.login-container .login-button:hover {
+.login-container .form-container .login-button:hover {
   background-color: #a5a5a5;
   color: #1e1e1e;
 }
-.login-container .google-login-button {
+.login-container .form-container .google-login-button {
   width: 100%;
   padding: 0.5rem 0.9rem;
   background-color: #fff;
@@ -72,10 +83,10 @@ h4 {
   cursor: pointer;
   transition: all 300ms ease-in-out;
 }
-.login-container .google-login-button:hover {
+.login-container .form-container .google-login-button:hover {
   background-color: #f8f8f8;
 }
-.login-container .google-login-button .google-logo {
+.login-container .form-container .google-login-button .google-logo {
   display: inline-block;
   width: 20px;
   height: 20px;
