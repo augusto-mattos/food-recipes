@@ -17,17 +17,26 @@ function Login() {
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
 
-  const handleSignInWithEmail = async () => {
+  const handleSignInWithEmail = async (e) => {
+    e.preventDefault();
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       const user = userCredential.user;
-      const token = await user.getIdToken(); 
-      sessionStorage.setItem("@AuthFirebase:token", token); 
+      const token = await user.getIdToken();
+      sessionStorage.setItem("@AuthFirebase:token", token);
       sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
       // console.log("Usuário logado:", user);
       window.location.reload();
     } catch (error) {
-      setError(error.message);
+      if (error.code === "auth/wrong-password") {
+        setError();
+      } else {
+        setError("Email or password incorrect. Please check your credentials and try again.");
+      }
       console.error("Erro ao fazer login:", error);
     }
   };
@@ -39,9 +48,12 @@ function Login() {
   return (
     <div className="login-container">
       <div className="form-container">
-        <img src={logo} alt="login" />
+        <img
+          src={logo}
+          alt="login"
+        />
         <h1 className="form-title">Login</h1>
-        <form>
+        <form onSubmit={handleSignInWithEmail}>
           <div className="input-group">
             <label className="form-login-label">
               Email:
@@ -50,6 +62,7 @@ function Login() {
                 value={email}
                 onChange={handleEmailChange}
                 className="email-input"
+                required
               />
             </label>
           </div>
@@ -61,22 +74,27 @@ function Login() {
                 value={password}
                 onChange={handlePasswordChange}
                 className="password-input"
+                required
               />
             </label>
           </div>
+          {error && <p className="error-message">{error}</p>}
+          <button
+            type="submit"
+            className="login-button"
+          >
+            Login
+          </button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              signInGoogle();
+            }}
+            className="google-login-button"
+          >
+            <span className="google-logo"></span>Logar com o Google
+          </button>
         </form>
-        <button
-          onClick={handleSignInWithEmail}
-          className="login-button"
-        >
-          Login
-        </button>
-        <button
-          onClick={() => signInGoogle()}
-          className="google-login-button"
-        >
-          <span className="google-logo"></span>Logar com o Google
-        </button>
       </div>
     </div>
   );
