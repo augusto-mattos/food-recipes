@@ -51,6 +51,7 @@ function Login() {
         <img
           src={logo}
           alt="login"
+          className="logo-form"
         />
         <h1 className="form-title">Login</h1>
         <form onSubmit={handleSignInWithEmail}>

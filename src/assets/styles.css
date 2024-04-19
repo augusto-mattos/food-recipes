@@ -35,8 +35,26 @@ h4 {
   padding: 3rem 1rem;
   background-color: #ebebeb;
 }
+@media (max-width: 768px) {
+  .login-container .form-container {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
 .login-container .form-container .form-title {
   font-size: 2rem;
+}
+@media (max-width: 768px) {
+  .login-container .form-container .form-title {
+    font-size: 1.75rem;
+  }
+}
+@media (max-width: 768px) {
+  .login-container .form-container .logo-form {
+    width: 75%;
+  }
 }
 .login-container .form-container .input-group {
   display: flex;
@@ -48,6 +66,11 @@ h4 {
   font-size: large;
   align-items: flex-start;
 }
+@media (max-width: 768px) {
+  .login-container .form-container .input-group .form-login-label {
+    gap: 1rem;
+  }
+}
 .login-container .form-container .input-group .email-input,
 .login-container .form-container .input-group .password-input {
   border: 0.1rem solid #1e1e1e;
@@ -55,6 +78,13 @@ h4 {
   padding: 0.5rem;
   font-size: 0.9rem;
   width: -webkit-fill-available;
+}
+@media (max-width: 768px) {
+  .login-container .form-container .input-group .email-input,
+  .login-container .form-container .input-group .password-input {
+    padding: 0.75rem;
+    font-size: 1.2rem;
+  }
 }
 .login-container .form-container .login-button {
   width: 100%;
@@ -72,6 +102,12 @@ h4 {
   background-color: #a5a5a5;
   color: #1e1e1e;
 }
+@media (max-width: 768px) {
+  .login-container .form-container .login-button {
+    padding: 0.75rem;
+    font-size: 1.2rem;
+  }
+}
 .login-container .form-container .google-login-button {
   width: 100%;
   padding: 0.5rem 0.9rem;
@@ -82,6 +118,12 @@ h4 {
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 300ms ease-in-out;
+}
+@media (max-width: 768px) {
+  .login-container .form-container .google-login-button {
+    padding: 0.75rem;
+    font-size: 1.2rem;
+  }
 }
 .login-container .form-container .google-login-button:hover {
   background-color: #f8f8f8;
@@ -138,6 +180,12 @@ header .nav-buttons .login-btn {
   background-color: #ebebeb;
   transition: all 300ms ease-in-out;
 }
+@media (max-width: 768px) {
+  header .nav-buttons .login-btn {
+    padding: 0.75rem;
+    font-size: 1.2rem;
+  }
+}
 header .nav-buttons .login-btn:hover {
   background-color: #793e37;
   color: #ffffff;
@@ -153,6 +201,12 @@ header .nav-buttons .logout-btn {
   background-color: #b55d51;
   color: #ffffff;
   transition: all 300ms ease-in-out;
+}
+@media (max-width: 768px) {
+  header .nav-buttons .logout-btn {
+    padding: 0.75rem;
+    font-size: 1.2rem;
+  }
 }
 header .nav-buttons .logout-btn:hover {
   background-color: #a5a5a5;
@@ -196,6 +250,12 @@ header .nav-buttons .logout-btn:hover {
   background-color: #ebebeb;
   transition: all 300ms ease-in-out;
 }
+@media (max-width: 768px) {
+  .hero .hero-content .connexion-buttons .login-btn {
+    padding: 0.75rem;
+    font-size: 1.2rem;
+  }
+}
 .hero .hero-content .connexion-buttons .login-btn:hover {
   background-color: #793e37;
   color: #ffffff;
@@ -212,6 +272,12 @@ header .nav-buttons .logout-btn:hover {
   color: #ffffff;
   transition: all 300ms ease-in-out;
   max-width: fit-content;
+}
+@media (max-width: 768px) {
+  .hero .hero-content .connexion-buttons .sign-up-btn {
+    padding: 0.75rem;
+    font-size: 1.2rem;
+  }
 }
 .hero .hero-content .connexion-buttons .sign-up-btn:hover {
   background-color: #a5a5a5;
@@ -319,6 +385,12 @@ form button {
   color: #ffffff;
   transition: all 300ms ease-in-out;
   width: 50%;
+}
+@media (max-width: 768px) {
+  form button {
+    padding: 0.75rem;
+    font-size: 1.2rem;
+  }
 }
 form button:hover {
   background-color: #a5a5a5;
@@ -578,6 +650,12 @@ form button:hover {
   color: #ffffff;
   transition: all 300ms ease-in-out;
 }
+@media (max-width: 768px) {
+  .recipe-actions .ingrendients-list-btn {
+    padding: 0.75rem;
+    font-size: 1.2rem;
+  }
+}
 .recipe-actions .ingrendients-list-btn:hover {
   background-color: #a5a5a5;
   color: #1e1e1e;
@@ -592,6 +670,12 @@ form button:hover {
   cursor: pointer;
   background-color: #ebebeb;
   transition: all 300ms ease-in-out;
+}
+@media (max-width: 768px) {
+  .recipe-actions .market-list-btn {
+    padding: 0.75rem;
+    font-size: 1.2rem;
+  }
 }
 .recipe-actions .market-list-btn:hover {
   background-color: #793e37;
