@@ -32,7 +32,7 @@ function NavBar() {
         {signed ? (
           <div className="signed-user">
             <p>
-            {`Olá, ${signedUserName} !`}
+            {`Olá, ${signedUserName}!`}
             </p>
           <button className="logout-btn" onClick={handleClick}>
             Logout
