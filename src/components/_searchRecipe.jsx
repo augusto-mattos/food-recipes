@@ -1,10 +1,13 @@
+import SearchCuisineType from "./_searchCuisineType";
+import SearchDietLabel from "./_searchDietLabel";
+
 function Search() {
+
   return (
-    <>
-    <h4>
-        Busca por categorias
-    </h4>
-    </>
+    <section>
+      <SearchCuisineType />
+      <SearchDietLabel />
+    </section>
   ) 
 }
 
