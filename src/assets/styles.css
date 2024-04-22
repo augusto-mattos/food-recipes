@@ -430,7 +430,7 @@ form button:hover {
 .featured-recipes-section {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1rem;
   height: auto;
 }
 .featured-recipes-section .btn-container {
@@ -688,32 +688,39 @@ form button:hover {
   color: #ffffff;
 }
 
-.serch-recipe-container {
+.search-recipe-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
-.serch-recipe-container .category-filters {
+.search-recipe-container .category-filters {
   display: flex;
   justify-content: space-around;
   border-radius: 1rem;
   background-color: #ebebeb;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
 }
-.serch-recipe-container .category-filters .category-container {
+.search-recipe-container .category-filters .selector {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #974e44;
+}
+.search-recipe-container .category-filters .category-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
 }
-.serch-recipe-container .category-filters .category-container h5 {
+.search-recipe-container .category-filters .category-container h5 {
   color: #793e37;
 }
-.serch-recipe-container .category-filters .category-container .filters-container {
+.search-recipe-container .category-filters .category-container .filters-container {
   display: flex;
   gap: 10px;
 }
-.serch-recipe-container .category-filters .category-container .filters-container .cuisine-selector {
+.search-recipe-container .category-filters .category-container .filters-container .cuisine-selector {
   padding: 0.2rem 0.5rem;
   border-radius: 0.3rem;
   font-size: 1rem;
@@ -721,7 +728,7 @@ form button:hover {
   color: #793e37;
   outline: none;
 }
-.serch-recipe-container .category-filters .category-container #fetchButton {
+.search-recipe-container .category-filters .category-container #fetchButton {
   visibility: hidden;
   font-size: 0.9rem;
   font-weight: 600;
@@ -736,12 +743,12 @@ form button:hover {
   color: #ffffff;
 }
 @media (max-width: 768px) {
-  .serch-recipe-container .category-filters .category-container #fetchButton {
+  .search-recipe-container .category-filters .category-container #fetchButton {
     padding: 0.75rem;
     font-size: 1.2rem;
   }
 }
-.serch-recipe-container .category-filters .category-container #fetchButton.selected {
+.search-recipe-container .category-filters .category-container #fetchButton.selected {
   visibility: visible;
 }
 
@@ -756,7 +763,7 @@ form button:hover {
 main {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 3rem;
   margin: 4.25rem 0;
 }
 
