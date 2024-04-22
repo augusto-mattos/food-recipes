@@ -1,21 +1,28 @@
 @use "../variables";
 @use "../mixins";
 
-.serch-recipe-container {
+.search-recipe-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   .category-filters {
     display: flex;
     justify-content: space-around;
     border-radius: 1rem;
     background-color: variables.$gray-1;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1rem 1rem;
+    .selector {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: variables.$terracota-2;
+    }
     .category-container {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      margin: 1rem 0;
+      margin: 1rem 0 0 0;
       h5 {
         color: variables.$terracota-3;
       }
