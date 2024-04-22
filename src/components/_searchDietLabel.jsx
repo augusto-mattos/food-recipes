@@ -5,7 +5,7 @@ function SearchDietLabel() {
   const [selectedDiet, setSelectedDiet] = useState("");
 
   const handleDietChange = (event) => {
-  setSelectedDiet(event.target.value);
+    setSelectedDiet(event.target.value);
   };
 
   const fetchRecipes = async () => {
@@ -18,26 +18,32 @@ function SearchDietLabel() {
   };
 
   return (
-    <section>
-    <h4>
-        Busca por categorias
-    </h4>
-    <div>
-      <h5>
-        Cuisine type
-      </h5>
-      <select value={selectedDiet} onChange={handleDietChange}>
-      <option value="balanced">balanced</option>
-        <option value="high-fiber">high-fiber</option>
-        <option value="high-protein">high-protein</option>
-        <option value="low-carb">low-carb</option>
-        <option value="low-fat">low-fat</option>
-        <option value="low-sodium">low-sodium</option>
-      </select>
+    <div className="category-container">
+      <h5>Dieta</h5>
+      <div className="filters-container">
+        <select
+          value={selectedDiet}
+          onChange={handleDietChange}
+          className="cuisine-selector"
+        >
+          <option value="">Selecione uma opção</option>
+          <option value="balanced">Balanced</option>
+          <option value="high-fiber">High-fiber</option>
+          <option value="high-protein">High-protein</option>
+          <option value="low-carb">Low-carb</option>
+          <option value="low-fat">Low-fat</option>
+          <option value="low-sodium">Low-sodium</option>
+        </select>
+        <button
+          id="fetchButton"
+          className={selectedDiet ? "selected" : ""}
+          onClick={fetchRecipes}
+        >
+          Go
+        </button>
+      </div>
     </div>
-    <button onClick={fetchRecipes}>Buscar</button>
-    </section>
-  ) 
+  );
 }
 
 export default SearchDietLabel;

@@ -12,6 +12,7 @@
 @use "./components/nutritionalFacts";
 @use "./components/recipeHeader";
 @use "./components/ingredientsList";
+@use "./components/search";
 
 #root {
   max-width: 1240px;

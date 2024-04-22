@@ -18,28 +18,34 @@ function SearchCuisineType() {
   };
 
   return (
-    <section>
-    <h4>
-        Busca por categorias
-    </h4>
-    <div>
-      <h5>
-        Cuisine type
-      </h5>
-      <select value={selectedCuisine} onChange={handleCuisineChange}>
-        <option value="American">American</option>
-        <option value="British">British</option>
-        <option value="Chinese">Chinese</option>
-        <option value="French">French</option>
-        <option value="Indian">Indian</option>
-        <option value="Italian">Italian</option>
-        <option value="Japanese">Japanese</option>
-        <option value="Mexican">Mexican</option>
-      </select>
+    <div className="category-container">
+      <h5>Tipo de cozinha</h5>
+      <div className="filters-container">
+        <select
+          value={selectedCuisine}
+          onChange={handleCuisineChange}
+          className="cuisine-selector"
+        >
+          <option value="">Selecione uma opção</option>
+          <option value="American">American</option>
+          <option value="British">British</option>
+          <option value="Chinese">Chinese</option>
+          <option value="French">French</option>
+          <option value="Indian">Indian</option>
+          <option value="Italian">Italian</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Mexican">Mexican</option>
+        </select>
+        <button
+          id="fetchButton"
+          className={selectedCuisine ? "selected" : ""}
+          onClick={fetchRecipes}
+        >
+          Go
+        </button>
+      </div>
     </div>
-    <button onClick={fetchRecipes}>Buscar</button>
-    </section>
-  ) 
+  );
 }
 
 export default SearchCuisineType;
