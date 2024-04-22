@@ -34,6 +34,7 @@ function SearchDietLabel() {
           <option value="low-fat">Low-fat</option>
           <option value="low-sodium">Low-sodium</option>
         </select>
+      </div>
         <button
           id="fetchButton"
           className={selectedDiet ? "selected" : ""}
@@ -41,7 +42,6 @@ function SearchDietLabel() {
         >
           Go
         </button>
-      </div>
     </div>
   );
 }

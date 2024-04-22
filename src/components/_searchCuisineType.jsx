@@ -36,6 +36,7 @@ function SearchCuisineType() {
           <option value="Japanese">Japanese</option>
           <option value="Mexican">Mexican</option>
         </select>
+      </div>
         <button
           id="fetchButton"
           className={selectedCuisine ? "selected" : ""}
@@ -43,7 +44,6 @@ function SearchCuisineType() {
         >
           Go
         </button>
-      </div>
     </div>
   );
 }

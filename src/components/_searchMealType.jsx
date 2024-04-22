@@ -33,6 +33,7 @@ function SearchMealType() {
         <option value="snack">Snack</option>
         <option value="teatime">Teatime</option>
         </select>
+      </div>
         <button
           id="fetchButton"
           className={selectedMealType ? "selected" : ""}
@@ -40,7 +41,6 @@ function SearchMealType() {
         >
           Go
         </button>
-      </div>
     </div>
   ) 
 }
