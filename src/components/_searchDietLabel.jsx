@@ -35,13 +35,13 @@ function SearchDietLabel() {
           <option value="low-sodium">Low-sodium</option>
         </select>
       </div>
-        <button
-          id="fetchButton"
-          className={selectedDiet ? "selected" : ""}
-          onClick={fetchRecipes}
-        >
-          Go
-        </button>
+      <button
+        id="fetchButton"
+        className={selectedDiet ? "selected" : ""}
+        onClick={fetchRecipes}
+      >
+        Go
+      </button>
     </div>
   );
 }

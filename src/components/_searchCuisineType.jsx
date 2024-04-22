@@ -37,13 +37,13 @@ function SearchCuisineType() {
           <option value="Mexican">Mexican</option>
         </select>
       </div>
-        <button
-          id="fetchButton"
-          className={selectedCuisine ? "selected" : ""}
-          onClick={fetchRecipes}
-        >
-          Go
-        </button>
+      <button
+        id="fetchButton"
+        className={selectedCuisine ? "selected" : ""}
+        onClick={fetchRecipes}
+      >
+        Go
+      </button>
     </div>
   );
 }
