@@ -36,14 +36,14 @@ function SearchCuisineType() {
           <option value="Japanese">Japanese</option>
           <option value="Mexican">Mexican</option>
         </select>
-        <button
-          id="fetchButton"
-          className={selectedCuisine ? "selected" : ""}
-          onClick={fetchRecipes}
-        >
-          Go
-        </button>
       </div>
+      <button
+        id="fetchButton"
+        className={selectedCuisine ? "selected" : ""}
+        onClick={fetchRecipes}
+      >
+        Go
+      </button>
     </div>
   );
 }

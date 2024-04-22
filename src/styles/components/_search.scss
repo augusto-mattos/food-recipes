@@ -25,17 +25,21 @@
         .cuisine-selector {
           padding: 0.2rem 0.5rem;
           border-radius: 0.3rem;
+          font-size: 1rem;
           border: none;
+          color: variables.$terracota-3;
+          outline: none;
         }
-        #fetchButton {
-          visibility: hidden;
-          @include mixins.btn-defaut();
-          min-width: unset;
-          background-color: variables.$terracota-1;
-          color: variables.$white;
-          &.selected {
-            visibility: visible;
-          }
+      }
+      #fetchButton {
+        visibility: hidden;
+        @include mixins.btn-defaut();
+        min-width: unset;
+        align-self: flex-end;
+        background-color: variables.$terracota-1;
+        color: variables.$white;
+        &.selected {
+          visibility: visible;
         }
       }
     }

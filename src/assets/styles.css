@@ -716,9 +716,12 @@ form button:hover {
 .serch-recipe-container .category-filters .category-container .filters-container .cuisine-selector {
   padding: 0.2rem 0.5rem;
   border-radius: 0.3rem;
+  font-size: 1rem;
   border: none;
+  color: #793e37;
+  outline: none;
 }
-.serch-recipe-container .category-filters .category-container .filters-container #fetchButton {
+.serch-recipe-container .category-filters .category-container #fetchButton {
   visibility: hidden;
   font-size: 0.9rem;
   font-weight: 600;
@@ -728,16 +731,17 @@ form button:hover {
   min-width: 6.25rem;
   cursor: pointer;
   min-width: unset;
+  align-self: flex-end;
   background-color: #b55d51;
   color: #ffffff;
 }
 @media (max-width: 768px) {
-  .serch-recipe-container .category-filters .category-container .filters-container #fetchButton {
+  .serch-recipe-container .category-filters .category-container #fetchButton {
     padding: 0.75rem;
     font-size: 1.2rem;
   }
 }
-.serch-recipe-container .category-filters .category-container .filters-container #fetchButton.selected {
+.serch-recipe-container .category-filters .category-container #fetchButton.selected {
   visibility: visible;
 }
 

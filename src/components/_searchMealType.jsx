@@ -5,7 +5,7 @@ function SearchMealType() {
   const [selectedMealType, setSelectedMealType] = useState("");
 
   const handleMealType = (event) => {
-  setSelectedMealType(event.target.value);
+    setSelectedMealType(event.target.value);
   };
 
   const fetchRecipes = async () => {
@@ -28,21 +28,21 @@ function SearchMealType() {
         >
           <option value="">Selecione uma opção</option>
           <option value="breakfast">Breakfast</option>
-        <option value="dinner">Dinner</option>
-        <option value="lunch">Lunch</option>
-        <option value="snack">Snack</option>
-        <option value="teatime">Teatime</option>
+          <option value="dinner">Dinner</option>
+          <option value="lunch">Lunch</option>
+          <option value="snack">Snack</option>
+          <option value="teatime">Teatime</option>
         </select>
-        <button
-          id="fetchButton"
-          className={selectedMealType ? "selected" : ""}
-          onClick={fetchRecipes}
-        >
-          Go
-        </button>
       </div>
+      <button
+        id="fetchButton"
+        className={selectedMealType ? "selected" : ""}
+        onClick={fetchRecipes}
+      >
+        Go
+      </button>
     </div>
-  ) 
+  );
 }
 
 export default SearchMealType;
