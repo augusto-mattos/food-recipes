@@ -11,10 +11,16 @@ h2 {
 h3 {
   font-size: 1.9rem;
   margin: 0;
+  color: #793e37;
 }
 
 h4 {
   font-size: 1.1rem;
+  margin: 0;
+}
+
+h5 {
+  font-size: 0.975rem;
   margin: 0;
 }
 
@@ -680,6 +686,59 @@ form button:hover {
 .recipe-actions .market-list-btn:hover {
   background-color: #793e37;
   color: #ffffff;
+}
+
+.serch-recipe-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.serch-recipe-container .category-filters {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 1rem;
+  background-color: #ebebeb;
+  padding: 2rem 1rem;
+}
+.serch-recipe-container .category-filters .category-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.serch-recipe-container .category-filters .category-container h5 {
+  color: #793e37;
+}
+.serch-recipe-container .category-filters .category-container .filters-container {
+  display: flex;
+  gap: 10px;
+}
+.serch-recipe-container .category-filters .category-container .filters-container .cuisine-selector {
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  border: none;
+}
+.serch-recipe-container .category-filters .category-container .filters-container #fetchButton {
+  visibility: hidden;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  min-width: 6.25rem;
+  cursor: pointer;
+  min-width: unset;
+  background-color: #b55d51;
+  color: #ffffff;
+}
+@media (max-width: 768px) {
+  .serch-recipe-container .category-filters .category-container .filters-container #fetchButton {
+    padding: 0.75rem;
+    font-size: 1.2rem;
+  }
+}
+.serch-recipe-container .category-filters .category-container .filters-container #fetchButton.selected {
+  visibility: visible;
 }
 
 #root {

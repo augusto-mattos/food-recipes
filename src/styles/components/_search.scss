@@ -1,0 +1,43 @@
+@use "../variables";
+@use "../mixins";
+
+.serch-recipe-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  .category-filters {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 1rem;
+    background-color: variables.$gray-1;
+    padding: 2rem 1rem;
+    .category-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 1rem 0;
+      h5 {
+        color: variables.$terracota-3;
+      }
+      .filters-container {
+        display: flex;
+        gap: 10px;
+        .cuisine-selector {
+          padding: 0.2rem 0.5rem;
+          border-radius: 0.3rem;
+          border: none;
+        }
+        #fetchButton {
+          visibility: hidden;
+          @include mixins.btn-defaut();
+          min-width: unset;
+          background-color: variables.$terracota-1;
+          color: variables.$white;
+          &.selected {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+}
