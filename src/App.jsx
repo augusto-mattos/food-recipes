@@ -3,6 +3,7 @@ import Layout from "./components/layout/_layout";
 import Home from "./pages/Home";
 import Recipe from "./pages/Recipe";
 import Login from "./pages/Login";
+import RecipesList from "./pages/RecipesList";
 import { AuthGoogleProvider } from "../src/contexts/authGoogle";
 
 import "./assets/styles.css";
@@ -25,6 +26,14 @@ function App() {
             element={
               <Layout>
                 <Recipe />
+              </Layout>
+            }
+          />
+          <Route
+            path="/recipes-list"
+            element={
+              <Layout>
+                <RecipesList />
               </Layout>
             }
           />

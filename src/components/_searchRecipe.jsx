@@ -6,7 +6,7 @@ function Search() {
   return (
     <section className="search-recipe-container">
       <div>
-        <h3>Buscar por categorias</h3>
+        <h3>Encontre novas receitas por categoria</h3>
         <p>
           Selecione uma categoria e clique apenas uma categoria por pesquisa
         </p>
