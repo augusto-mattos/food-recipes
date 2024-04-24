@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import fetchMealType from "../data/_mealType";
 
 function SearchMealType() {
   const [selectedMealType, setSelectedMealType] = useState("");
+  const navigate = useNavigate();
 
   const handleMealType = (event) => {
     setSelectedMealType(event.target.value);
@@ -12,6 +14,7 @@ function SearchMealType() {
     try {
       const response = await fetchMealType(selectedMealType);
       console.log(response);
+      navigate("/recipes-list");
     } catch (error) {
       console.error("Erro ao buscar receitas:", error);
     }

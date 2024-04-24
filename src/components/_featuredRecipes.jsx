@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import fetchRandomRecipes from "../data/_randomRecipes";
 import CardRecipe from "./_cardRecipe";
 
 function FeaturedRecipes() {
   const [recipes, setRecipes] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -30,11 +32,15 @@ function FeaturedRecipes() {
     return array.sort(() => Math.random() - 0.5);
   };
 
+  const handleClick = () => {
+    navigate("/recipes-list");
+  };
+
   return (
     <section className="featured-recipes-section">
       <h3>Receitas em destaque</h3>
       <div className="btn-container">
-        <button className="view-more-btn">View more</button>
+        <button className="view-more-btn" onClick={handleClick}>View more</button>
       </div>
       <div className="top-recipes">
         {shuffleRecipes(recipes)

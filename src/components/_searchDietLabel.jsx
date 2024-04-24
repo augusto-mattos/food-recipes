@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import fetchDietLabel from "../data/_dietLabel";
 
 function SearchDietLabel() {
   const [selectedDiet, setSelectedDiet] = useState("");
+  const navigate = useNavigate();
 
   const handleDietChange = (event) => {
     setSelectedDiet(event.target.value);
@@ -12,6 +14,7 @@ function SearchDietLabel() {
     try {
       const response = await fetchDietLabel(selectedDiet);
       console.log(response);
+      navigate("/recipes-list");
     } catch (error) {
       console.error("Erro ao buscar receitas:", error);
     }

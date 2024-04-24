@@ -18,7 +18,7 @@ async function fetchCuisineType(cuisineType) {
     }
 
     const data = await response.json();
-    sessionStorage.setItem("cuisineType", JSON.stringify(data));
+    sessionStorage.setItem("recipeSearchResults", JSON.stringify(data));
     return data;
   } catch (error) {
     console.error("Erro ao buscar receitas:", error);
