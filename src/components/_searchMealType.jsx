@@ -1,23 +1,13 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import fetchMealType from "../data/_mealType";
 
-function SearchMealType() {
+function SearchMealType({ setMealType }) {
   const [selectedMealType, setSelectedMealType] = useState("");
-  const navigate = useNavigate();
 
   const handleMealType = (event) => {
-    setSelectedMealType(event.target.value);
-  };
-
-  const fetchRecipes = async () => {
-    try {
-      const response = await fetchMealType(selectedMealType);
-      console.log(response);
-      navigate("/recipes-list");
-    } catch (error) {
-      console.error("Erro ao buscar receitas:", error);
-    }
+    const selectedValue = event.target.value;
+    setSelectedMealType(selectedValue);
+    setMealType(selectedValue); 
   };
 
   return (
@@ -37,13 +27,6 @@ function SearchMealType() {
           <option value="teatime">Teatime</option>
         </select>
       </div>
-      <button
-        id="fetchButton"
-        className={selectedMealType ? "selected" : ""}
-        onClick={fetchRecipes}
-      >
-        Go
-      </button>
     </div>
   );
 }

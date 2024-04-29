@@ -1,8 +1,18 @@
 import { API_KEY, API_URL, APP_ID } from "./_constants";
 
-async function fetchCuisineType(cuisineType) {
+async function fetchAdvancedSearch(mealType = "", dietLabel = "", cuisineType = "") {
   try {
-    const url = `${API_URL}?type=public&${APP_ID}&${API_KEY}&cuisineType=${cuisineType}`;
+    let url = `${API_URL}?type=public&${APP_ID}&${API_KEY}&`;
+
+    if (mealType) {
+      url += `&mealType=${mealType}`;
+    }
+    if (dietLabel) {
+      url += `&dietLabel=${dietLabel}`;
+    }
+    if (cuisineType) {
+      url += `&cuisineType=${cuisineType}`;
+    }
 
     const response = await fetch(url, {
       method: "GET",
@@ -26,5 +36,4 @@ async function fetchCuisineType(cuisineType) {
   }
 }
 
-export default fetchCuisineType;
-
+export default fetchAdvancedSearch;
