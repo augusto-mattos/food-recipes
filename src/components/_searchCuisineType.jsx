@@ -1,23 +1,13 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import fetchCuisineType from "../data/_cuisineType";
 
-function SearchCuisineType() {
+function SearchCuisineType({ setCuisineType }) {
   const [selectedCuisine, setSelectedCuisine] = useState("");
-  const navigate = useNavigate();
 
   const handleCuisineChange = (event) => {
-    setSelectedCuisine(event.target.value);
-  };
-
-  const fetchRecipes = async () => {
-    try {
-      const response = await fetchCuisineType(selectedCuisine);
-      console.log(response);
-      navigate("/recipes-list");
-    } catch (error) {
-      console.error("Erro ao buscar receitas:", error);
-    }
+    const selectedValue = event.target.value;
+    setSelectedCuisine(selectedValue);
+    setCuisineType(selectedValue); 
   };
 
   return (
@@ -40,13 +30,6 @@ function SearchCuisineType() {
           <option value="Mexican">Mexican</option>
         </select>
       </div>
-      <button
-        id="fetchButton"
-        className={selectedCuisine ? "selected" : ""}
-        onClick={fetchRecipes}
-      >
-        Go
-      </button>
     </div>
   );
 }
