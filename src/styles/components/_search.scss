@@ -8,9 +8,9 @@
   .category-filters {
     display: flex;
     justify-content: space-around;
-    border-radius: 1rem;
     background-color: variables.$gray-1;
-    padding: 2rem 1rem 1rem 1rem;
+    border-radius: 1rem;
+    padding: 2rem 1rem;
     .selector {
       display: flex;
       align-items: center;
@@ -22,7 +22,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      margin: 1rem 0 0 0;
+      margin: 0;
       h5 {
         color: variables.$terracota-3;
       }
@@ -38,17 +38,18 @@
           outline: none;
         }
       }
-      #fetchButton {
-        visibility: hidden;
-        @include mixins.btn-defaut();
-        min-width: unset;
-        align-self: flex-end;
-        background-color: variables.$terracota-1;
-        color: variables.$white;
-        &.selected {
-          visibility: visible;
-        }
-      }
+    }
+  }
+  #fetchButton {
+    visibility: hidden;
+    @include mixins.btn-defaut();
+    max-width: 400px;
+    width: 100%;
+    align-self: center;
+    background-color: variables.$terracota-1;
+    color: variables.$white;
+    &.selected {
+      visibility: visible;
     }
   }
 }
