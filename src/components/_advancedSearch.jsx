@@ -17,10 +17,6 @@ function AdvancedSearch() {
 
   const fetchRecipes = async () => {
     try {
-      console.log("Meal Type:", mealType);
-      console.log("Diet Label:", dietLabel);
-      console.log("Cuisine Type:", cuisineType);
-
       const response = await fetchAdvancedSearch(mealType, dietLabel, cuisineType);
       console.log(response);
       navigate("/recipes-list");
@@ -41,10 +37,10 @@ function AdvancedSearch() {
       <SearchCuisineType setCuisineType={setCuisineType} />
       <SearchDietLabel setDietLabel={setDietLabel} />
       <SearchMealType setMealType={setMealType} />
-      <button onClick={fetchRecipes}>
+    </div>
+      <button id="fetchButton" onClick={fetchRecipes} className={mealType || dietLabel || cuisineType ? "selected" : ""} >
         Vai
       </button>
-    </div>
   </section>
   );
 }

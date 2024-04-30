@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchDataRecipes } from "../../data/_dataRecipe";
 import RecipeHeader from "../../components/_recipeHeader";
 import IngredientsList from "../../components/_ingredientsList";
-import Search from "../../components/_searchRecipe";
+import AdvancedSearch from "../../components/_advancedSearch";
 
 function Recipe() {
   const currentURL = window.location.href;
@@ -40,7 +40,7 @@ function Recipe() {
     <>
       <RecipeHeader />
       <IngredientsList />
-      <Search />
+      <AdvancedSearch />
     </>
   );
 }
