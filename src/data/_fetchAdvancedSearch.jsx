@@ -28,7 +28,8 @@ async function fetchAdvancedSearch(mealType = "", dietLabel = "", cuisineType = 
     }
 
     const data = await response.json();
-    sessionStorage.setItem("recipeSearchResults", JSON.stringify(data));
+    const hits = data.hits;
+    sessionStorage.setItem("recipeSearchResults", JSON.stringify(hits));
     return data;
   } catch (error) {
     console.error("Erro ao buscar receitas:", error);
