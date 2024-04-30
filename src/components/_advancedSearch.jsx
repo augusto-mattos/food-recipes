@@ -8,7 +8,6 @@ import SearchMealType from "./_searchMealType";
 import fetchAdvancedSearch from "../data/_fetchAdvancedSearch";
 
 function AdvancedSearch() {
-
   const navigate = useNavigate();
 
   const [cuisineType, setCuisineType] = useState("");
@@ -27,21 +26,25 @@ function AdvancedSearch() {
 
   return (
     <section className="search-recipe-container">
-    <div>
-      <h3>Encontre novas receitas por categoria</h3>
-      <p>
-        Selecione uma categoria e clique apenas uma categoria por pesquisa
-      </p>
-    </div>
-    <div className="category-filters">
-      <SearchCuisineType setCuisineType={setCuisineType} />
-      <SearchDietLabel setDietLabel={setDietLabel} />
-      <SearchMealType setMealType={setMealType} />
-    </div>
-      <button id="fetchButton" onClick={fetchRecipes} className={mealType || dietLabel || cuisineType ? "selected" : ""} >
+      <div>
+        <h3>Encontre novas receitas por categoria</h3>
+        <p>
+          Selecione uma categoria e clique apenas uma categoria por pesquisa
+        </p>
+      </div>
+      <div className="category-filters">
+        <SearchCuisineType setCuisineType={setCuisineType} />
+        <SearchDietLabel setDietLabel={setDietLabel} />
+        <SearchMealType setMealType={setMealType} />
+      </div>
+      <button
+        id="fetchButton"
+        onClick={fetchRecipes}
+        className={mealType || dietLabel || cuisineType ? "selected" : ""}
+      >
         Vai
       </button>
-  </section>
+    </section>
   );
 }
 
