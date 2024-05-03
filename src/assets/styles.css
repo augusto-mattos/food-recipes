@@ -150,9 +150,20 @@ header {
   align-items: center;
   background-color: #ffffff;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
 header nav {
   display: flex;
   gap: 1rem;
+}
+@media (max-width: 768px) {
+  header nav {
+    gap: 2rem;
+  }
 }
 header nav a {
   text-decoration: none;
@@ -162,9 +173,19 @@ header nav a {
 header nav a:hover {
   color: #b55d51;
 }
+@media (max-width: 768px) {
+  header nav a {
+    font-size: 22px;
+  }
+}
 header .nav-buttons {
   display: flex;
   gap: 1rem;
+}
+@media (max-width: 768px) {
+  header .nav-buttons {
+    display: none;
+  }
 }
 header .nav-buttons .signed-user {
   display: flex;
