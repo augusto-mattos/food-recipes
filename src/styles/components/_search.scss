@@ -11,6 +11,11 @@
     background-color: variables.$gray-1;
     border-radius: 1rem;
     padding: 2rem 1rem;
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
     .selector {
       display: flex;
       align-items: center;
@@ -36,6 +41,9 @@
           border: none;
           color: variables.$terracota-3;
           outline: none;
+          @media (max-width: 768px) {
+            width: 100%;
+          }
         }
       }
     }

@@ -775,6 +775,13 @@ form button:hover {
   border-radius: 1rem;
   padding: 2rem 1rem;
 }
+@media (max-width: 768px) {
+  .search-recipe-container .category-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
 .search-recipe-container .category-filters .selector {
   display: flex;
   align-items: center;
@@ -802,6 +809,11 @@ form button:hover {
   border: none;
   color: #793e37;
   outline: none;
+}
+@media (max-width: 768px) {
+  .search-recipe-container .category-filters .category-container .filters-container .cuisine-selector {
+    width: 100%;
+  }
 }
 .search-recipe-container #fetchButton {
   visibility: hidden;
