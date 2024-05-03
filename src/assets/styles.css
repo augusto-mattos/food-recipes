@@ -510,10 +510,21 @@ form button:hover {
 .featured-recipes-section .btn-container .view-more-btn:hover {
   text-decoration: underline;
 }
+@media (max-width: 768px) {
+  .featured-recipes-section .btn-container .view-more-btn {
+    display: none;
+  }
+}
 .featured-recipes-section .top-recipes {
   gap: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+@media (max-width: 768px) {
+  .featured-recipes-section .top-recipes {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .card-recipe {
