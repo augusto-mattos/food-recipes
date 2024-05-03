@@ -375,6 +375,11 @@ footer .footer-content {
   width: 1240px;
   margin: auto;
 }
+@media (max-width: 768px) {
+  footer .footer-content {
+    flex-direction: column;
+  }
+}
 footer .footer-content .logo-col {
   width: 30%;
   display: flex;
