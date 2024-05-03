@@ -25,7 +25,7 @@ function AdvancedSearch() {
   };
 
   return (
-    <section className="search-recipe-container">
+    <section id="search" className="search-recipe-container">
       <div>
         <h3>Encontre novas receitas por categoria</h3>
         <p>
