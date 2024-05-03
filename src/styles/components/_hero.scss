@@ -10,6 +10,9 @@
     justify-content: center;
     gap: 1rem;
     max-width: 50%;
+    @media (max-width: 768px) {
+      max-width: unset;
+    }
     span {
       color: variables.$terracota-2;
     }
@@ -27,16 +30,27 @@
       .login-btn {
         @include mixins.btn-defaut();
         @include mixins.btn-gray();
+        @media (max-width: 768px) {
+          font-size: 1rem;
+          padding: 0.5rem;
+        }
       }
       .sign-up-btn {
         @include mixins.btn-defaut();
         @include mixins.btn-terracota();
         max-width: fit-content;
+        @media (max-width: 768px) {
+          font-size: 1rem;
+          padding: 0.5rem;
+        }
       }
     }
   }
-  img {
+  .img-hero {
     width: auto;
     height: 400px;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 }

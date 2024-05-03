@@ -39,10 +39,13 @@ function Hero() {
           </>
         )}
       </div>
+      <div className="img-hero">
       <img
         src={heroImg}
         alt=""
+        className="img-hero"
       />
+      </div>
     </section>
   );
 }
