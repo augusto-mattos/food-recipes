@@ -29,7 +29,7 @@ function AdvancedSearch() {
       <div>
         <h3>Encontre novas receitas por categoria</h3>
         <p>
-          Selecione uma categoria e clique apenas uma categoria por pesquisa
+          Selecione as categorias desejadas para fazer sua busca
         </p>
       </div>
       <div className="category-filters">
