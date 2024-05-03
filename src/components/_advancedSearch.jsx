@@ -11,12 +11,12 @@ function AdvancedSearch() {
   const navigate = useNavigate();
 
   const [cuisineType, setCuisineType] = useState("");
-  const [dietLabel, setDietLabel] = useState("");
+  const [diet, setDiet] = useState("");
   const [mealType, setMealType] = useState("");
 
   const fetchRecipes = async () => {
     try {
-      const response = await fetchAdvancedSearch(mealType, dietLabel, cuisineType);
+      const response = await fetchAdvancedSearch(mealType, diet, cuisineType);
       console.log(response);
       navigate("/recipes-list");
     } catch (error) {
@@ -34,13 +34,13 @@ function AdvancedSearch() {
       </div>
       <div className="category-filters">
         <SearchCuisineType setCuisineType={setCuisineType} />
-        <SearchDietLabel setDietLabel={setDietLabel} />
+        <SearchDietLabel setDiet={setDiet} />
         <SearchMealType setMealType={setMealType} />
       </div>
       <button
         id="fetchButton"
         onClick={fetchRecipes}
-        className={mealType || dietLabel || cuisineType ? "selected" : ""}
+        className={mealType || diet || cuisineType ? "selected" : ""}
       >
         Vai
       </button>

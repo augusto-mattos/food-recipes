@@ -448,8 +448,9 @@ form button:hover {
   text-decoration: underline;
 }
 .featured-recipes-section .top-recipes {
-  display: flex;
   gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .card-recipe {
