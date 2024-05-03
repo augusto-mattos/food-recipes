@@ -27,4 +27,7 @@ main {
   flex-direction: column;
   gap: 3rem;
   margin: 4.25rem 0;
+  @media (max-width: 768px) {
+    margin: 4.25rem 1rem;
+  }
 }

@@ -10,11 +10,18 @@
     justify-content: flex-end;
     .view-more-btn {
       @include mixins.view-more-btn();
+      @media(max-width: 768px) {
+        display: none;
+      }
     }
   }
   .top-recipes {
     gap: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

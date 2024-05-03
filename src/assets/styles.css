@@ -2,10 +2,20 @@ h1 {
   font-size: 3rem;
   margin: 0;
 }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+}
 
 h2 {
   font-size: 2.25rem;
   margin: 0;
+}
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.75rem;
+  }
 }
 
 h3 {
@@ -13,10 +23,20 @@ h3 {
   margin: 0;
   color: #793e37;
 }
+@media (max-width: 768px) {
+  h3 {
+    font-size: 1.4rem;
+  }
+}
 
 h4 {
   font-size: 1.1rem;
   margin: 0;
+}
+@media (max-width: 768px) {
+  h4 {
+    font-size: 1rem;
+  }
 }
 
 h5 {
@@ -150,9 +170,20 @@ header {
   align-items: center;
   background-color: #ffffff;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
 header nav {
   display: flex;
   gap: 1rem;
+}
+@media (max-width: 768px) {
+  header nav {
+    gap: 2rem;
+  }
 }
 header nav a {
   text-decoration: none;
@@ -162,9 +193,19 @@ header nav a {
 header nav a:hover {
   color: #b55d51;
 }
+@media (max-width: 768px) {
+  header nav a {
+    font-size: 22px;
+  }
+}
 header .nav-buttons {
   display: flex;
   gap: 1rem;
+}
+@media (max-width: 768px) {
+  header .nav-buttons {
+    display: none;
+  }
 }
 header .nav-buttons .signed-user {
   display: flex;
@@ -230,6 +271,11 @@ header .nav-buttons .logout-btn:hover {
   gap: 1rem;
   max-width: 50%;
 }
+@media (max-width: 768px) {
+  .hero .hero-content {
+    max-width: unset;
+  }
+}
 .hero .hero-content span {
   color: #974e44;
 }
@@ -266,6 +312,12 @@ header .nav-buttons .logout-btn:hover {
   background-color: #793e37;
   color: #ffffff;
 }
+@media (max-width: 768px) {
+  .hero .hero-content .connexion-buttons .login-btn {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}
 .hero .hero-content .connexion-buttons .sign-up-btn {
   font-size: 0.9rem;
   font-weight: 600;
@@ -289,9 +341,20 @@ header .nav-buttons .logout-btn:hover {
   background-color: #a5a5a5;
   color: #1e1e1e;
 }
-.hero img {
+@media (max-width: 768px) {
+  .hero .hero-content .connexion-buttons .sign-up-btn {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}
+.hero .img-hero {
   width: auto;
   height: 400px;
+}
+@media (max-width: 768px) {
+  .hero .img-hero {
+    display: none;
+  }
 }
 
 footer {
@@ -311,6 +374,11 @@ footer .footer-content {
   gap: 1.5rem;
   width: 1240px;
   margin: auto;
+}
+@media (max-width: 768px) {
+  footer .footer-content {
+    flex-direction: column;
+  }
 }
 footer .footer-content .logo-col {
   width: 30%;
@@ -447,10 +515,21 @@ form button:hover {
 .featured-recipes-section .btn-container .view-more-btn:hover {
   text-decoration: underline;
 }
+@media (max-width: 768px) {
+  .featured-recipes-section .btn-container .view-more-btn {
+    display: none;
+  }
+}
 .featured-recipes-section .top-recipes {
   gap: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+@media (max-width: 768px) {
+  .featured-recipes-section .top-recipes {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .card-recipe {
@@ -701,6 +780,13 @@ form button:hover {
   border-radius: 1rem;
   padding: 2rem 1rem;
 }
+@media (max-width: 768px) {
+  .search-recipe-container .category-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
 .search-recipe-container .category-filters .selector {
   display: flex;
   align-items: center;
@@ -728,6 +814,11 @@ form button:hover {
   border: none;
   color: #793e37;
   outline: none;
+}
+@media (max-width: 768px) {
+  .search-recipe-container .category-filters .category-container .filters-container .cuisine-selector {
+    width: 100%;
+  }
 }
 .search-recipe-container #fetchButton {
   visibility: hidden;
@@ -767,6 +858,11 @@ main {
   flex-direction: column;
   gap: 3rem;
   margin: 4.25rem 0;
+}
+@media (max-width: 768px) {
+  main {
+    margin: 4.25rem 1rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
