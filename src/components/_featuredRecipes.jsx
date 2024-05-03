@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import fetchRandomRecipes from "../data/_randomRecipes";
 import CardRecipe from "./_cardRecipe";
 
 function FeaturedRecipes() {
   const [recipes, setRecipes] = useState([]);
-  const navigate = useNavigate();
+  const [displayedRecipes, setDisplayedRecipes] = useState([]);
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -27,31 +26,28 @@ function FeaturedRecipes() {
     fetchRecipes();
   }, []);
 
-  const shuffleRecipes = (array) => {
-    //embaralha os objetos do array. Vamos usar so os tres primeiros depois de embaralhados
-    return array.sort(() => Math.random() - 0.5);
-  };
+  useEffect(() => {
+    setDisplayedRecipes(recipes.slice(0, 3));
+  }, [recipes]);
 
-  const handleClick = () => {
-    navigate("/recipes-list");
+  const loadMoreRecipes = () => {
+    setDisplayedRecipes(recipes);
   };
 
   return (
     <section className="featured-recipes-section">
       <h3>Receitas em destaque</h3>
       <div className="btn-container">
-        <button className="view-more-btn" onClick={handleClick}>View more</button>
+        <button className="view-more-btn" onClick={loadMoreRecipes}>View more</button>
       </div>
       <div className="top-recipes">
-        {shuffleRecipes(recipes)
-          .slice(0, 3)
-          .map((recipe, index) => (
-            <CardRecipe
-              key={index}
-              id={recipe.recipe.uri}
-              {...recipe.recipe}
-            />
-          ))}
+      {displayedRecipes.map((recipe, index) => (
+          <CardRecipe
+            key={index}
+            id={recipe.recipe.uri}
+            {...recipe.recipe}
+          />
+        ))}
       </div>
     </section>
   );

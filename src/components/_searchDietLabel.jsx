@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 
-function SearchDietLabel({ setDietLabel }) {
+function SearchDietLabel({ setDiet }) {
   const [selectedDiet, setSelectedDiet] = useState("");
 
   const handleDietChange = (event) => {
     const selectedValue = event.target.value;
     setSelectedDiet(selectedValue);
-    setDietLabel(selectedValue); 
+    setDiet(selectedValue); 
   };
 
   return (
