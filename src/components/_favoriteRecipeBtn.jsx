@@ -36,20 +36,6 @@ function FavoriteRecipeButton({ recipeId }) {
 
   const toggleLike = async (e) => {
     e.preventDefault();
-    if (!currentUser) {
-      console.log(
-        "Usuário não autenticado. Redirecionando para a página de login..."
-      );
-      return;
-    }
-
-    if (!recipeId) {
-      console.error(
-        "recipeId não está definido. Certifique-se de passar um valor válido."
-      );
-      return;
-    }
-
     // Adiciona ou remove receita da lista de favoritos do usuário
     const userId = currentUser.uid;
     const docRef = doc(db, "favorites", userId);
