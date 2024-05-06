@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthGoogleContext } from "../../contexts/authGoogle";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
-function Login() {
+function SignUp() {
   const { signInGoogle, signed } = useContext(AuthGoogleContext);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -21,12 +21,12 @@ function Login() {
   const handleSignInWithEmail = async (e) => {
     e.preventDefault();
     try {
-      const userCredential = await signInWithEmailAndPassword(
+      const newUserCredential = await createUserWithEmailAndPassword(
         auth,
         email,
         password
       );
-      const user = userCredential.user;
+      const user = newUserCredential.user;
       const token = await user.getIdToken();
       sessionStorage.setItem("@AuthFirebase:token", token);
       sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
@@ -48,8 +48,8 @@ function Login() {
     navigate("/");
   }
 
-  const newUserForm = () => {
-    navigate("/signup");
+  const loginForm = () => {
+    navigate("/login");
   };
 
   return (
@@ -61,7 +61,7 @@ function Login() {
             alt="Food Recipes"
           />
         </NavLink>
-        <h1 className="form-title">Login</h1>
+        <h1 className="form-title">Create user</h1>
         <form onSubmit={handleSignInWithEmail}>
           <div className="input-group">
             <label className="form-login-label">
@@ -103,11 +103,11 @@ function Login() {
           >
             <span className="google-logo"></span>Logar com o Google
           </button>
-          <button onClick={newUserForm}>Preciso criar um novo usuario</button>
+          <button onClick={loginForm}>Já tenho um usuario cadastrado</button>
         </form>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default SignUp;
