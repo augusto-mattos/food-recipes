@@ -9,8 +9,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import FavoriteRecipeButton from "./_favoriteRecipeBtn";
 import NutritionalFacts from "./_nutrionalFacts";
+import PropTypes from "prop-types";
 
-function RecipeHeader() {
+function RecipeHeader(props) {
+
+  const currentURL = window.location.href;
+  const urlParts = currentURL.split("/");
+  const recipeId = urlParts[urlParts.length - 1];
+  
   const storedRecipe =
     JSON.parse(sessionStorage.getItem("recipeData"))?.recipe || {};
   const {
@@ -33,7 +39,7 @@ function RecipeHeader() {
     <section className="recipe-header">
       <div className="title">
         <h1>{label}</h1>
-        <FavoriteRecipeButton />
+        <FavoriteRecipeButton currentUser={props.currentUser} recipeId={recipeId} />
       </div>
       <div className="recipe-specs">
         <div className="calories">
@@ -89,5 +95,9 @@ function RecipeHeader() {
     </section>
   );
 }
+
+RecipeHeader.propTypes = {
+  currentUser: PropTypes.object,
+};
 
 export default RecipeHeader;
