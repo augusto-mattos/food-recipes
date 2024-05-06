@@ -16,7 +16,7 @@ function FavoriteRecipeButton({ recipeId }) {
       const user = JSON.parse(sessionUser);
       setCurrentUser(user);
       if (recipeId) {
-        checkIfLiked(user.uid, recipeId);
+        checkIfLiked(user.uid, recipeId); 
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
