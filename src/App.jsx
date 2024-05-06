@@ -3,7 +3,9 @@ import Layout from "./components/layout/_layout";
 import Home from "./pages/Home";
 import Recipe from "./pages/Recipe";
 import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 import RecipesList from "./pages/RecipesList";
+
 import { AuthGoogleProvider } from "../src/contexts/authGoogle";
 
 import "./assets/styles.css";
@@ -40,6 +42,10 @@ function App() {
           <Route
             path="/login"
             element={<Login />}
+          />
+          <Route
+            path="/signup"
+            element={<SignUp />} 
           />
         </Routes>
       </Router>
