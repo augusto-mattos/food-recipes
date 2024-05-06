@@ -1,15 +1,14 @@
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { app } from "../services/firebaseConfig";
-import { createContext } from "react";
 import PropTypes from "prop-types";
 
 const provider = new GoogleAuthProvider();
+const auth = getAuth(app);
 
 export const AuthGoogleContext = createContext({});
 
 export const AuthGoogleProvider = ({ children }) => {
-  const auth = getAuth(app);
   const [user, setUser] = useState(null);
 
   const signOut = () => {
@@ -23,7 +22,9 @@ export const AuthGoogleProvider = ({ children }) => {
       const sessionToken = sessionStorage.getItem("@AuthFirebase:token");
       const sessionUser = sessionStorage.getItem("@AuthFirebase:user");
       if (sessionToken && sessionUser) {
-        setUser(sessionUser);
+        setUser(JSON.parse(sessionUser)); // Parse para objeto JSON
+      } else {
+        setUser(null); 
       }
     };
     loadStoreAuth();
@@ -60,3 +61,6 @@ export const AuthGoogleProvider = ({ children }) => {
 AuthGoogleProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const useAuth = () => useContext(AuthGoogleContext);

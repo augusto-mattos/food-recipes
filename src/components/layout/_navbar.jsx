@@ -13,7 +13,7 @@ function NavBar() {
   function handleClick() {
     if (signed) {
       signOut();
-      navigate("/");
+      window.location.reload();
     } else {
       navigate("/login");
     }
