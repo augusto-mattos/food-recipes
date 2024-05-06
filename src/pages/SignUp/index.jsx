@@ -92,7 +92,7 @@ function SignUp() {
             type="submit"
             className="login-button"
           >
-            Login
+            Criar usuario
           </button>
           <button
             onClick={(e) => {

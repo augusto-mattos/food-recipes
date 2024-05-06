@@ -8,8 +8,12 @@ function Hero() {
   const { signed } = useContext(AuthGoogleContext);
   const navigate = useNavigate();
 
-  function handleClick() {
+  const handleClick =() => {
     if (!signed) navigate("/login");
+  }
+
+  const createNewUser =() => {
+    navigate("/signup");
   }
 
   return (
@@ -31,7 +35,7 @@ function Hero() {
               >
                 Login
               </button>
-              <button className="sign-up-btn">Sign up</button>
+              <button className="sign-up-btn" onClick={createNewUser}>Sign up</button>
             </div>
             <p>
               Do you have an account? <Link to="/login">Log in</Link>
