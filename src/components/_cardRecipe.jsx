@@ -5,7 +5,6 @@ import { faFire } from "@fortawesome/free-solid-svg-icons";
 import FavoriteRecipeButton from "./_favoriteRecipeBtn";
 
 function CardRecipe(props) {
-
   const recipeId = props.uri.split("_")[1];
 
   return (
@@ -20,7 +19,12 @@ function CardRecipe(props) {
       />
       <div className="title-and-like">
         <h4 className="recipe-title">{props.label}</h4>
-        <FavoriteRecipeButton currentUser={props.currentUser} recipeId={recipeId} />
+        <FavoriteRecipeButton
+          currentUser={props.currentUser}
+          recipeId={recipeId}
+          label={props.label}
+          image={props.image}
+        />
       </div>
       <div className="recipe-info">
         <span>{`Category: ${props.mealType[0]}`}</span>

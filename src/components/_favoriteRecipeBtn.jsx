@@ -5,7 +5,7 @@ import { faBookmark as regularBookmark } from "@fortawesome/free-regular-svg-ico
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 import PropTypes from "prop-types";
 
-function FavoriteRecipeButton({ recipeId }) {
+function FavoriteRecipeButton({ recipeId, label, image }) {
   const [isLiked, setIsLiked] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const db = getFirestore();
@@ -16,44 +16,60 @@ function FavoriteRecipeButton({ recipeId }) {
       const user = JSON.parse(sessionUser);
       setCurrentUser(user);
       if (recipeId) {
-        checkIfLiked(user.uid, recipeId); 
+        checkIfLiked(user.uid, recipeId);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [recipeId]);
 
+  useEffect(() => {
+    // Verificar se a receita está na lista de favoritos sempre que o componente for montado
+    if (currentUser && recipeId) {
+      checkIfLiked(currentUser.uid, recipeId);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentUser, recipeId]);
+
   const checkIfLiked = async (userId, recipeId) => {
-    // Verifica no Firestore se a receita aparece na lista de favoritos do usuário pra renderizar a flag certa
     const docRef = doc(db, "favorites", userId);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       const favorites = docSnap.data();
-      if (favorites.recipes && favorites.recipes.includes(recipeId)) {
+      if (
+        favorites.recipes &&
+        favorites.recipes.some((recipe) => recipe.id === recipeId)
+      ) {
         setIsLiked(true);
+      } else {
+        setIsLiked(false);
       }
     }
   };
 
   const toggleLike = async (e) => {
     e.preventDefault();
-    // Adiciona ou remove receita da lista de favoritos do usuário
     const userId = currentUser.uid;
     const docRef = doc(db, "favorites", userId);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      // Se o documento do usuário existe na base, atualiza a lista de favoritos
       const favorites = docSnap.data();
       let updatedFavorites;
       if (isLiked) {
-        updatedFavorites = favorites.recipes.filter((id) => id !== recipeId);
+        updatedFavorites = favorites.recipes.filter(
+          (recipe) => recipe.id !== recipeId
+        );
       } else {
-        updatedFavorites = [...(favorites.recipes || []), recipeId];
+        updatedFavorites = [
+          ...(favorites.recipes || []),
+          { id: recipeId, label: label, image: image },
+        ];
       }
       await setDoc(docRef, { recipes: updatedFavorites }, { merge: true });
     } else {
-      // Se o documento do usuário não existir na base, cria com a lista de favoritos
-      await setDoc(docRef, { recipes: [recipeId] });
+      await setDoc(docRef, {
+        recipes: [{ id: recipeId, label: label, image: image }],
+      });
     }
 
     setIsLiked(!isLiked);
@@ -74,6 +90,8 @@ function FavoriteRecipeButton({ recipeId }) {
 
 FavoriteRecipeButton.propTypes = {
   recipeId: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default FavoriteRecipeButton;

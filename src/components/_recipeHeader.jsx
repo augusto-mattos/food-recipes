@@ -12,11 +12,10 @@ import NutritionalFacts from "./_nutrionalFacts";
 import PropTypes from "prop-types";
 
 function RecipeHeader(props) {
-
   const currentURL = window.location.href;
   const urlParts = currentURL.split("/");
   const recipeId = urlParts[urlParts.length - 1];
-  
+
   const storedRecipe =
     JSON.parse(sessionStorage.getItem("recipeData"))?.recipe || {};
   const {
@@ -39,7 +38,12 @@ function RecipeHeader(props) {
     <section className="recipe-header">
       <div className="title">
         <h1>{label}</h1>
-        <FavoriteRecipeButton currentUser={props.currentUser} recipeId={recipeId} />
+        <FavoriteRecipeButton
+          currentUser={props.currentUser}
+          recipeId={recipeId}
+          label={label}
+          image={image}
+        />
       </div>
       <div className="recipe-specs">
         <div className="calories">
