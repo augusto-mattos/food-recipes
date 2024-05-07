@@ -13,6 +13,7 @@
 @use "./components/recipeHeader";
 @use "./components/ingredientsList";
 @use "./components/search";
+@use "./components/favoriteRecipes";
 
 #root {
   max-width: 1240px;
