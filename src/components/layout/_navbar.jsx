@@ -30,7 +30,7 @@ function NavBar() {
       <nav>
         <NavLink to="/#">Home</NavLink>
         <NavLink to="/recipes-list">Recipes</NavLink>
-        <NavLink to="/#">Favoritos</NavLink>
+        <NavLink to="/favorites">Favoritos</NavLink>
         {/* <NavLink to="/#">About</NavLink> */}
       </nav>
       <div className="nav-buttons">
