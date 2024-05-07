@@ -5,6 +5,7 @@ import Recipe from "./pages/Recipe";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import RecipesList from "./pages/RecipesList";
+import Favorites from "./pages/FavoriteRecipes";
 
 import { AuthGoogleProvider } from "../src/contexts/authGoogle";
 
@@ -39,6 +40,14 @@ function App() {
               </Layout>
             }
           />
+          <Route
+          path="/favorites"
+          element={
+            <Layout>
+              <Favorites />
+            </Layout>
+          }
+        />
           <Route
             path="/login"
             element={<Login />}
