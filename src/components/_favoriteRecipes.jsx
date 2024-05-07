@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 function FavoriteRecipes() {
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
@@ -40,13 +41,17 @@ function FavoriteRecipes() {
       </div>
       <div className="favorites-recipes-list">
         {favoriteRecipes.map((recipe) => (
-          <div key={recipe.id} className="favorite-recipe">
+          <Link
+            to={`/recipe/${recipe.id}`}
+            key={recipe.id}
+            className="favorite-recipe"
+          >
             <img
               src={recipe.image}
               alt={recipe.label}
-              />
-              <h5>{recipe.label}</h5>
-          </div>
+            />
+            <h5>{recipe.label}</h5>
+          </Link>
         ))}
       </div>
     </section>

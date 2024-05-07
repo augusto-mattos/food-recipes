@@ -856,6 +856,8 @@ form button:hover {
   border-radius: 0.5rem;
   background-color: #ebebeb;
   max-height: 4rem;
+  text-decoration: none;
+  color: #1e1e1e;
 }
 .favorites-recipes-list .favorite-recipe h5 {
   align-self: center;
