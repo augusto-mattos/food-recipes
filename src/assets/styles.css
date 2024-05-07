@@ -845,6 +845,27 @@ form button:hover {
   visibility: visible;
 }
 
+.favorites-recipes-list {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.favorites-recipes-list .favorite-recipe {
+  display: flex;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  background-color: #ebebeb;
+  max-height: 4rem;
+}
+.favorites-recipes-list .favorite-recipe h5 {
+  align-self: center;
+}
+.favorites-recipes-list .favorite-recipe img {
+  object-fit: cover;
+  width: 15%;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
 #root {
   max-width: 1240px;
   margin: 0 auto;

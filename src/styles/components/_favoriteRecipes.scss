@@ -1,0 +1,21 @@
+@use "../mixins";
+@use "../variables";
+
+.favorites-recipes-list {
+  @include mixins.flex-gap-1rem();
+  flex-direction: column;
+  .favorite-recipe {
+    @include mixins.flex-gap-1rem();
+    border-radius: 0.5rem;
+    background-color: variables.$gray-1;
+    max-height: 4rem;
+    h5 {
+      align-self: center;
+    }
+    img {
+      object-fit: cover;
+      width: 15%;
+      border-radius: 0.5rem 0 0 0.5rem;
+    }
+  }
+}
