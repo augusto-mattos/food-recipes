@@ -2,7 +2,7 @@ import { API_KEY, API_URL, APP_ID } from "./_constants";
 
 async function fetchRandomRecipes() {
   try {
-    const url = `${API_URL}?type=public&${APP_ID}&${API_KEY}&dishType=Starter&random=true`;
+    const url = `${API_URL}?type=public&app_id=${APP_ID}&app_key=${API_KEY}&dishType=Starter&random=true`;
 
     const response = await fetch(url, {
       method: "GET",

@@ -2,7 +2,7 @@ import { API_KEY, API_URL, APP_ID } from "./_constants";
 
 async function fetchAdvancedSearch(mealType = "", diet = "", cuisineType = "") {
   try {
-    let url = `${API_URL}?type=public&${APP_ID}&${API_KEY}&`;
+    let url = `${API_URL}?type=public&$app_id=${APP_ID}&app_key=${API_KEY}&`;
 
     if (mealType) {
       url += `&mealType=${mealType}`;

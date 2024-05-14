@@ -2,7 +2,7 @@ import { API_KEY, API_URL, APP_ID } from "./_constants";
 
 export async function fetchDataRecipes(recipeId) {
   try {
-    const url = `${API_URL}/${recipeId}?type=public&${APP_ID}&${API_KEY}&field=label&field=image&field=yield&field=dietLabels&field=healthLabels&field=ingredientLines&field=ingredients&field=calories&field=totalTime&field=cuisineType&field=mealType&field=dishType&field=totalNutrients`;
+    const url = `${API_URL}/${recipeId}?type=public&app_id=${APP_ID}&app_key=${API_KEY}&field=label&field=image&field=yield&field=dietLabels&field=healthLabels&field=ingredientLines&field=ingredients&field=calories&field=totalTime&field=cuisineType&field=mealType&field=dishType&field=totalNutrients`;
 
     const response = await fetch(url, {
       method: "GET",
