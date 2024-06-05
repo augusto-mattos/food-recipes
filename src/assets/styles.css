@@ -395,6 +395,11 @@ footer .footer-content .logo-col img {
 footer .footer-content .logo-col p {
   color: #4c4c4c;
 }
+@media (max-width: 768px) {
+  footer .footer-content .logo-col {
+    align-items: center;
+  }
+}
 footer .footer-content .footer-links {
   display: flex;
   flex-direction: column;

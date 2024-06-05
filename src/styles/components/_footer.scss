@@ -36,6 +36,10 @@ footer {
       p {
         color: variables.$gray-3;
       }
+
+      @media (max-width: 768px) {
+        align-items: center;
+      }
     }
     .footer-links {
       @include mixins.flex-col-center();
