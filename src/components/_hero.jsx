@@ -8,13 +8,13 @@ function Hero() {
   const { signed } = useContext(AuthGoogleContext);
   const navigate = useNavigate();
 
-  const handleClick =() => {
+  const handleClick = () => {
     if (!signed) navigate("/login");
-  }
+  };
 
-  const createNewUser =() => {
+  const createNewUser = () => {
     navigate("/signup");
-  }
+  };
 
   return (
     <section className="hero">
@@ -24,18 +24,20 @@ function Hero() {
           A <span>Food</span> journey
         </h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque est arcu, finibus in dapibus quis, ultrices vitae neque. Aenean pretium, metus non facilisis lobortis, nisl urna porttitor quam, et pulvinar erat est id nisl.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque est
+          arcu, finibus in dapibus quis, ultrices vitae neque. Aenean pretium,
+          metus non facilisis lobortis, nisl urna porttitor quam, et pulvinar
+          erat est id nisl.
         </p>
         {!signed && (
           <>
             <div className="connexion-buttons">
-              <button
-                className="login-btn"
-                onClick={handleClick}
-              >
+              <button className="login-btn" onClick={handleClick}>
                 Login
               </button>
-              <button className="sign-up-btn" onClick={createNewUser}>Sign up</button>
+              <button className="sign-up-btn" onClick={createNewUser}>
+                Sign up
+              </button>
             </div>
             <p>
               Do you have an account? <Link to="/login">Log in</Link>
@@ -44,11 +46,7 @@ function Hero() {
         )}
       </div>
       <div className="img-hero">
-      <img
-        src={heroImg}
-        alt=""
-        className="img-hero"
-      />
+        <img src={heroImg} alt="" className="img-hero" />
       </div>
     </section>
   );

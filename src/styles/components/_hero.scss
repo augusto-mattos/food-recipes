@@ -12,6 +12,7 @@
     max-width: 50%;
     @media (max-width: 768px) {
       max-width: unset;
+      text-align: center;
     }
     span {
       color: variables.$terracota-2;
@@ -27,6 +28,9 @@
     .connexion-buttons {
       display: flex;
       gap: 1rem;
+      @media (max-width: 768px) {
+        justify-content: center;
+      }
       .login-btn {
         @include mixins.btn-defaut();
         @include mixins.btn-gray();

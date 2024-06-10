@@ -38,15 +38,13 @@ function FeaturedRecipes() {
     <section className="featured-recipes-section">
       <h3>Receitas em destaque</h3>
       <div className="btn-container">
-        <button className="view-more-btn" onClick={loadMoreRecipes}>View more</button>
+        <button className="view-more-btn" onClick={loadMoreRecipes}>
+          View more
+        </button>
       </div>
       <div className="top-recipes">
-      {displayedRecipes.map((recipe, index) => (
-          <CardRecipe
-            key={index}
-            id={recipe.recipe.uri}
-            {...recipe.recipe}
-          />
+        {displayedRecipes.map((recipe, index) => (
+          <CardRecipe key={index} id={recipe.recipe.uri} {...recipe.recipe} />
         ))}
       </div>
     </section>
