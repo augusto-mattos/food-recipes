@@ -274,6 +274,7 @@ header .nav-buttons .logout-btn:hover {
 @media (max-width: 768px) {
   .hero .hero-content {
     max-width: unset;
+    text-align: center;
   }
 }
 .hero .hero-content span {
@@ -290,6 +291,11 @@ header .nav-buttons .logout-btn:hover {
 .hero .hero-content .connexion-buttons {
   display: flex;
   gap: 1rem;
+}
+@media (max-width: 768px) {
+  .hero .hero-content .connexion-buttons {
+    justify-content: center;
+  }
 }
 .hero .hero-content .connexion-buttons .login-btn {
   font-size: 0.9rem;
@@ -365,7 +371,6 @@ footer {
   justify-content: center;
   text-align: center;
   padding: 20px 0;
-  background-color: #ebebeb;
   font-size: 0.9rem;
 }
 footer .footer-content {
@@ -384,8 +389,6 @@ footer .footer-content {
 }
 footer .footer-content .logo-col {
   display: flex;
-  align-items: flex-start;
-  text-align: start;
   width: 30%;
   flex-direction: column;
   gap: 1rem;
@@ -433,8 +436,8 @@ footer .animidia {
 }
 @media (max-width: 768px) {
   footer .animidia {
-    gap: 0.5rem;
-    padding: 2px 0px 2px 0;
+    padding: 16px;
+    width: -webkit-fill-available;
   }
 }
 footer .animidia .social-media {
@@ -519,6 +522,11 @@ form button:hover {
   flex-direction: column;
   gap: 1rem;
   height: auto;
+}
+@media (max-width: 768px) {
+  .featured-recipes-section {
+    align-items: center;
+  }
 }
 .featured-recipes-section .btn-container {
   display: flex;
@@ -791,6 +799,13 @@ form button:hover {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+@media (max-width: 768px) {
+  .search-recipe-container .search-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .search-recipe-container .category-filters {
   display: flex;

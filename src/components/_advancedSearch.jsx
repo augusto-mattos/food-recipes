@@ -26,11 +26,9 @@ function AdvancedSearch() {
 
   return (
     <section id="search" className="search-recipe-container">
-      <div>
+      <div className="search-title">
         <h3>Encontre novas receitas por categoria</h3>
-        <p>
-          Selecione as categorias desejadas para fazer sua busca
-        </p>
+        <p>Selecione as categorias desejadas para fazer sua busca</p>
       </div>
       <div className="category-filters">
         <SearchCuisineType setCuisineType={setCuisineType} />
